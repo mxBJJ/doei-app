@@ -1,0 +1,20 @@
+PODS:
+  - FloatRatingView (4.0)
+  - Kingfisher (6.2.1)
+
+DEPENDENCIES:
+  - FloatRatingView (~> 4)
+  - Kingfisher (~> 6.0)
+
+SPEC REPOS:
+  trunk:
+    - FloatRatingView
+    - Kingfisher
+
+SPEC CHECKSUMS:
+  FloatRatingView: bb6bdddfbeec51b1d387b4bd50abc27b4dfccd48
+  Kingfisher: e71c6fac2aebb1262888cabc2cb13d313362a48f
+
+PODFILE CHECKSUM: 8611fdcda717d8563b44d87454a7ca0e46a204e1
+
+COCOAPODS: 1.10.1

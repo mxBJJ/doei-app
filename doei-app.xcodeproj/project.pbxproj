@@ -1,0 +1,836 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		15FA44CB4C3E1EE7A8ED0450 /* Pods_doei_app_doei_appUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 297ED240D69D070DA40A875C /* Pods_doei_app_doei_appUITests.framework */; };
+		3CAEFC9DAAC723C742F028CA /* Pods_doei_appTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4019DFA3DE287B116329361 /* Pods_doei_appTests.framework */; };
+		B3645A01621242C869F9DC01 /* Pods_doei_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ECCB6C177BE1B79533F1451 /* Pods_doei_app.framework */; };
+		FE0866DA262671FC00E28A77 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0866D9262671FC00E28A77 /* DetailViewController.swift */; };
+		FE0866DF262693CA00E28A77 /* placeholder.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = FE0866DE262693CA00E28A77 /* placeholder.jpeg */; };
+		FE1843E726278CD800065651 /* MyAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1843E626278CD800065651 /* MyAccountViewController.swift */; };
+		FE1843EC2627905E00065651 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1843EB2627905E00065651 /* LoginViewController.swift */; };
+		FE1843F12627A40300065651 /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1843F02627A40300065651 /* CreatePostViewController.swift */; };
+		FE69E6D1262BC428002B4BCD /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE69E6D0262BC428002B4BCD /* FilterViewController.swift */; };
+		FE69E6D6262BCBDD002B4BCD /* FilterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE69E6D5262BCBDD002B4BCD /* FilterTableViewCell.swift */; };
+		FED0CD0C262629020068AC69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED0CD0B262629020068AC69 /* AppDelegate.swift */; };
+		FED0CD0E262629020068AC69 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED0CD0D262629020068AC69 /* SceneDelegate.swift */; };
+		FED0CD10262629020068AC69 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED0CD0F262629020068AC69 /* PostViewController.swift */; };
+		FED0CD15262629050068AC69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FED0CD14262629050068AC69 /* Assets.xcassets */; };
+		FED0CD18262629050068AC69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FED0CD16262629050068AC69 /* LaunchScreen.storyboard */; };
+		FED0CD23262629060068AC69 /* doei_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED0CD22262629060068AC69 /* doei_appTests.swift */; };
+		FED0CD2E262629060068AC69 /* doei_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED0CD2D262629060068AC69 /* doei_appUITests.swift */; };
+		FED0CD4F26262EAD0068AC69 /* PostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED0CD4E26262EAD0068AC69 /* PostCollectionViewCell.swift */; };
+		FED0CD57262637290068AC69 /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED0CD56262637290068AC69 /* PostViewModel.swift */; };
+		FED0CD642626376D0068AC69 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED0CD632626376D0068AC69 /* Post.swift */; };
+		FEDFDC28262B786F0085AD53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEDFDC27262B786F0085AD53 /* Main.storyboard */; };
+		FEEA7A19262C6CB1005E36B0 /* FiltersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEA7A18262C6CB1005E36B0 /* FiltersTableViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FED0CD1F262629060068AC69 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FED0CD00262629020068AC69 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FED0CD07262629020068AC69;
+			remoteInfo = "doei-app";
+		};
+		FED0CD2A262629060068AC69 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FED0CD00262629020068AC69 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FED0CD07262629020068AC69;
+			remoteInfo = "doei-app";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		27A2B6388A017F14A09BF027 /* Pods-doei-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-doei-app.debug.xcconfig"; path = "Target Support Files/Pods-doei-app/Pods-doei-app.debug.xcconfig"; sourceTree = "<group>"; };
+		297ED240D69D070DA40A875C /* Pods_doei_app_doei_appUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_doei_app_doei_appUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4451166556C5F332543136F9 /* Pods-doei-appTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-doei-appTests.release.xcconfig"; path = "Target Support Files/Pods-doei-appTests/Pods-doei-appTests.release.xcconfig"; sourceTree = "<group>"; };
+		5ECCB6C177BE1B79533F1451 /* Pods_doei_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_doei_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F19234DF7D562E9C7085CAC /* Pods-doei-app-doei-appUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-doei-app-doei-appUITests.release.xcconfig"; path = "Target Support Files/Pods-doei-app-doei-appUITests/Pods-doei-app-doei-appUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A2C5B4B3EC51296FD7E534B6 /* Pods-doei-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-doei-app.release.xcconfig"; path = "Target Support Files/Pods-doei-app/Pods-doei-app.release.xcconfig"; sourceTree = "<group>"; };
+		B4019DFA3DE287B116329361 /* Pods_doei_appTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_doei_appTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D28EB39379DE3C213F4C6B03 /* Pods-doei-appTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-doei-appTests.debug.xcconfig"; path = "Target Support Files/Pods-doei-appTests/Pods-doei-appTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F8FD993FB3FCD7A53E0CA071 /* Pods-doei-app-doei-appUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-doei-app-doei-appUITests.debug.xcconfig"; path = "Target Support Files/Pods-doei-app-doei-appUITests/Pods-doei-app-doei-appUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		FE0866D9262671FC00E28A77 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		FE0866DE262693CA00E28A77 /* placeholder.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = placeholder.jpeg; sourceTree = "<group>"; };
+		FE1843E626278CD800065651 /* MyAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccountViewController.swift; sourceTree = "<group>"; };
+		FE1843EB2627905E00065651 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		FE1843F02627A40300065651 /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
+		FE69E6D0262BC428002B4BCD /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		FE69E6D5262BCBDD002B4BCD /* FilterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTableViewCell.swift; sourceTree = "<group>"; };
+		FED0CD08262629020068AC69 /* doei-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "doei-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FED0CD0B262629020068AC69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FED0CD0D262629020068AC69 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		FED0CD0F262629020068AC69 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		FED0CD14262629050068AC69 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FED0CD17262629050068AC69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FED0CD19262629050068AC69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FED0CD1E262629060068AC69 /* doei-appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "doei-appTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FED0CD22262629060068AC69 /* doei_appTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = doei_appTests.swift; sourceTree = "<group>"; };
+		FED0CD24262629060068AC69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FED0CD29262629060068AC69 /* doei-appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "doei-appUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FED0CD2D262629060068AC69 /* doei_appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = doei_appUITests.swift; sourceTree = "<group>"; };
+		FED0CD2F262629060068AC69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FED0CD4E26262EAD0068AC69 /* PostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCollectionViewCell.swift; sourceTree = "<group>"; };
+		FED0CD56262637290068AC69 /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
+		FED0CD632626376D0068AC69 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		FEDFDC27262B786F0085AD53 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		FEEA7A18262C6CB1005E36B0 /* FiltersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersTableViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FED0CD05262629020068AC69 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3645A01621242C869F9DC01 /* Pods_doei_app.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FED0CD1B262629060068AC69 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3CAEFC9DAAC723C742F028CA /* Pods_doei_appTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FED0CD26262629060068AC69 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15FA44CB4C3E1EE7A8ED0450 /* Pods_doei_app_doei_appUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2A51EF9AA7C26B21CE994C59 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5ECCB6C177BE1B79533F1451 /* Pods_doei_app.framework */,
+				297ED240D69D070DA40A875C /* Pods_doei_app_doei_appUITests.framework */,
+				B4019DFA3DE287B116329361 /* Pods_doei_appTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BCFEAD6FBA0434224DC7C6E1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				27A2B6388A017F14A09BF027 /* Pods-doei-app.debug.xcconfig */,
+				A2C5B4B3EC51296FD7E534B6 /* Pods-doei-app.release.xcconfig */,
+				F8FD993FB3FCD7A53E0CA071 /* Pods-doei-app-doei-appUITests.debug.xcconfig */,
+				6F19234DF7D562E9C7085CAC /* Pods-doei-app-doei-appUITests.release.xcconfig */,
+				D28EB39379DE3C213F4C6B03 /* Pods-doei-appTests.debug.xcconfig */,
+				4451166556C5F332543136F9 /* Pods-doei-appTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		FED0CCFF262629020068AC69 = {
+			isa = PBXGroup;
+			children = (
+				FED0CD0A262629020068AC69 /* doei-app */,
+				FED0CD21262629060068AC69 /* doei-appTests */,
+				FED0CD2C262629060068AC69 /* doei-appUITests */,
+				FED0CD09262629020068AC69 /* Products */,
+				BCFEAD6FBA0434224DC7C6E1 /* Pods */,
+				2A51EF9AA7C26B21CE994C59 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		FED0CD09262629020068AC69 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FED0CD08262629020068AC69 /* doei-app.app */,
+				FED0CD1E262629060068AC69 /* doei-appTests.xctest */,
+				FED0CD29262629060068AC69 /* doei-appUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FED0CD0A262629020068AC69 /* doei-app */ = {
+			isa = PBXGroup;
+			children = (
+				FED0CD4C26262D750068AC69 /* Storyboard */,
+				FED0CD4826262C0D0068AC69 /* Service */,
+				FED0CD4726262C080068AC69 /* Model */,
+				FED0CD4626262C000068AC69 /* ViewModel */,
+				FED0CD4526262BF90068AC69 /* View */,
+				FED0CD0B262629020068AC69 /* AppDelegate.swift */,
+				FED0CD0D262629020068AC69 /* SceneDelegate.swift */,
+				FED0CD14262629050068AC69 /* Assets.xcassets */,
+				FE0866DE262693CA00E28A77 /* placeholder.jpeg */,
+				FED0CD19262629050068AC69 /* Info.plist */,
+			);
+			path = "doei-app";
+			sourceTree = "<group>";
+		};
+		FED0CD21262629060068AC69 /* doei-appTests */ = {
+			isa = PBXGroup;
+			children = (
+				FED0CD22262629060068AC69 /* doei_appTests.swift */,
+				FED0CD24262629060068AC69 /* Info.plist */,
+			);
+			path = "doei-appTests";
+			sourceTree = "<group>";
+		};
+		FED0CD2C262629060068AC69 /* doei-appUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FED0CD2D262629060068AC69 /* doei_appUITests.swift */,
+				FED0CD2F262629060068AC69 /* Info.plist */,
+			);
+			path = "doei-appUITests";
+			sourceTree = "<group>";
+		};
+		FED0CD4526262BF90068AC69 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FED0CD4D26262E6B0068AC69 /* Cells */,
+				FED0CD0F262629020068AC69 /* PostViewController.swift */,
+				FE0866D9262671FC00E28A77 /* DetailViewController.swift */,
+				FE1843E626278CD800065651 /* MyAccountViewController.swift */,
+				FE1843EB2627905E00065651 /* LoginViewController.swift */,
+				FE1843F02627A40300065651 /* CreatePostViewController.swift */,
+				FE69E6D0262BC428002B4BCD /* FilterViewController.swift */,
+				FEEA7A18262C6CB1005E36B0 /* FiltersTableViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FED0CD4626262C000068AC69 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FED0CD56262637290068AC69 /* PostViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FED0CD4726262C080068AC69 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FED0CD632626376D0068AC69 /* Post.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FED0CD4826262C0D0068AC69 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		FED0CD4C26262D750068AC69 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				FEDFDC27262B786F0085AD53 /* Main.storyboard */,
+				FED0CD16262629050068AC69 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		FED0CD4D26262E6B0068AC69 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				FED0CD4E26262EAD0068AC69 /* PostCollectionViewCell.swift */,
+				FE69E6D5262BCBDD002B4BCD /* FilterTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FED0CD07262629020068AC69 /* doei-app */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FED0CD32262629060068AC69 /* Build configuration list for PBXNativeTarget "doei-app" */;
+			buildPhases = (
+				BB9995D8EA07E4E1CFA0BEAF /* [CP] Check Pods Manifest.lock */,
+				FED0CD04262629020068AC69 /* Sources */,
+				FED0CD05262629020068AC69 /* Frameworks */,
+				FED0CD06262629020068AC69 /* Resources */,
+				C94A8B09E5D9F8096FF94871 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "doei-app";
+			productName = "doei-app";
+			productReference = FED0CD08262629020068AC69 /* doei-app.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FED0CD1D262629060068AC69 /* doei-appTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FED0CD35262629060068AC69 /* Build configuration list for PBXNativeTarget "doei-appTests" */;
+			buildPhases = (
+				24144AAA76291709B45392DD /* [CP] Check Pods Manifest.lock */,
+				FED0CD1A262629060068AC69 /* Sources */,
+				FED0CD1B262629060068AC69 /* Frameworks */,
+				FED0CD1C262629060068AC69 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FED0CD20262629060068AC69 /* PBXTargetDependency */,
+			);
+			name = "doei-appTests";
+			productName = "doei-appTests";
+			productReference = FED0CD1E262629060068AC69 /* doei-appTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FED0CD28262629060068AC69 /* doei-appUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FED0CD38262629060068AC69 /* Build configuration list for PBXNativeTarget "doei-appUITests" */;
+			buildPhases = (
+				1678F2DC80B442F20A04778E /* [CP] Check Pods Manifest.lock */,
+				FED0CD25262629060068AC69 /* Sources */,
+				FED0CD26262629060068AC69 /* Frameworks */,
+				FED0CD27262629060068AC69 /* Resources */,
+				E703B7BFC53C0AACFFCCC3CB /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FED0CD2B262629060068AC69 /* PBXTargetDependency */,
+			);
+			name = "doei-appUITests";
+			productName = "doei-appUITests";
+			productReference = FED0CD29262629060068AC69 /* doei-appUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FED0CD00262629020068AC69 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					FED0CD07262629020068AC69 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					FED0CD1D262629060068AC69 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = FED0CD07262629020068AC69;
+					};
+					FED0CD28262629060068AC69 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = FED0CD07262629020068AC69;
+					};
+				};
+			};
+			buildConfigurationList = FED0CD03262629020068AC69 /* Build configuration list for PBXProject "doei-app" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FED0CCFF262629020068AC69;
+			productRefGroup = FED0CD09262629020068AC69 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FED0CD07262629020068AC69 /* doei-app */,
+				FED0CD1D262629060068AC69 /* doei-appTests */,
+				FED0CD28262629060068AC69 /* doei-appUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FED0CD06262629020068AC69 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FED0CD18262629050068AC69 /* LaunchScreen.storyboard in Resources */,
+				FED0CD15262629050068AC69 /* Assets.xcassets in Resources */,
+				FE0866DF262693CA00E28A77 /* placeholder.jpeg in Resources */,
+				FEDFDC28262B786F0085AD53 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FED0CD1C262629060068AC69 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FED0CD27262629060068AC69 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1678F2DC80B442F20A04778E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-doei-app-doei-appUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		24144AAA76291709B45392DD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-doei-appTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BB9995D8EA07E4E1CFA0BEAF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-doei-app-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C94A8B09E5D9F8096FF94871 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-doei-app/Pods-doei-app-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-doei-app/Pods-doei-app-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-doei-app/Pods-doei-app-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E703B7BFC53C0AACFFCCC3CB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-doei-app-doei-appUITests/Pods-doei-app-doei-appUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-doei-app-doei-appUITests/Pods-doei-app-doei-appUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-doei-app-doei-appUITests/Pods-doei-app-doei-appUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FED0CD04262629020068AC69 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE1843F12627A40300065651 /* CreatePostViewController.swift in Sources */,
+				FE1843EC2627905E00065651 /* LoginViewController.swift in Sources */,
+				FED0CD57262637290068AC69 /* PostViewModel.swift in Sources */,
+				FED0CD4F26262EAD0068AC69 /* PostCollectionViewCell.swift in Sources */,
+				FE1843E726278CD800065651 /* MyAccountViewController.swift in Sources */,
+				FEEA7A19262C6CB1005E36B0 /* FiltersTableViewController.swift in Sources */,
+				FE69E6D1262BC428002B4BCD /* FilterViewController.swift in Sources */,
+				FED0CD10262629020068AC69 /* PostViewController.swift in Sources */,
+				FED0CD642626376D0068AC69 /* Post.swift in Sources */,
+				FED0CD0C262629020068AC69 /* AppDelegate.swift in Sources */,
+				FE69E6D6262BCBDD002B4BCD /* FilterTableViewCell.swift in Sources */,
+				FED0CD0E262629020068AC69 /* SceneDelegate.swift in Sources */,
+				FE0866DA262671FC00E28A77 /* DetailViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FED0CD1A262629060068AC69 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FED0CD23262629060068AC69 /* doei_appTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FED0CD25262629060068AC69 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FED0CD2E262629060068AC69 /* doei_appUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FED0CD20262629060068AC69 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FED0CD07262629020068AC69 /* doei-app */;
+			targetProxy = FED0CD1F262629060068AC69 /* PBXContainerItemProxy */;
+		};
+		FED0CD2B262629060068AC69 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FED0CD07262629020068AC69 /* doei-app */;
+			targetProxy = FED0CD2A262629060068AC69 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FED0CD16262629050068AC69 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FED0CD17262629050068AC69 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FED0CD30262629060068AC69 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FED0CD31262629060068AC69 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FED0CD33262629060068AC69 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27A2B6388A017F14A09BF027 /* Pods-doei-app.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QCUVHH748T;
+				INFOPLIST_FILE = "doei-app/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "maxmendes.doei-app";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		FED0CD34262629060068AC69 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A2C5B4B3EC51296FD7E534B6 /* Pods-doei-app.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QCUVHH748T;
+				INFOPLIST_FILE = "doei-app/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "maxmendes.doei-app";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		FED0CD36262629060068AC69 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D28EB39379DE3C213F4C6B03 /* Pods-doei-appTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QCUVHH748T;
+				INFOPLIST_FILE = "doei-appTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "maxmendes.doei-appTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/doei-app.app/doei-app";
+			};
+			name = Debug;
+		};
+		FED0CD37262629060068AC69 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4451166556C5F332543136F9 /* Pods-doei-appTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QCUVHH748T;
+				INFOPLIST_FILE = "doei-appTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "maxmendes.doei-appTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/doei-app.app/doei-app";
+			};
+			name = Release;
+		};
+		FED0CD39262629060068AC69 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F8FD993FB3FCD7A53E0CA071 /* Pods-doei-app-doei-appUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QCUVHH748T;
+				INFOPLIST_FILE = "doei-appUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "maxmendes.doei-appUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "doei-app";
+			};
+			name = Debug;
+		};
+		FED0CD3A262629060068AC69 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F19234DF7D562E9C7085CAC /* Pods-doei-app-doei-appUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QCUVHH748T;
+				INFOPLIST_FILE = "doei-appUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "maxmendes.doei-appUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "doei-app";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FED0CD03262629020068AC69 /* Build configuration list for PBXProject "doei-app" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FED0CD30262629060068AC69 /* Debug */,
+				FED0CD31262629060068AC69 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FED0CD32262629060068AC69 /* Build configuration list for PBXNativeTarget "doei-app" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FED0CD33262629060068AC69 /* Debug */,
+				FED0CD34262629060068AC69 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FED0CD35262629060068AC69 /* Build configuration list for PBXNativeTarget "doei-appTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FED0CD36262629060068AC69 /* Debug */,
+				FED0CD37262629060068AC69 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FED0CD38262629060068AC69 /* Build configuration list for PBXNativeTarget "doei-appUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FED0CD39262629060068AC69 /* Debug */,
+				FED0CD3A262629060068AC69 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FED0CD00262629020068AC69 /* Project object */;
+}

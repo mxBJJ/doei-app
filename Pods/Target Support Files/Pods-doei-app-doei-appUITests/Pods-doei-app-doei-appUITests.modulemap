@@ -1,0 +1,6 @@
+framework module Pods_doei_app_doei_appUITests {
+  umbrella header "Pods-doei-app-doei-appUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
