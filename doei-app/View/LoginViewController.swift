@@ -34,4 +34,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         btnGoogle.layer.cornerRadius = 20
     }
     
+    
+    @IBAction func btnBack(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    
 }

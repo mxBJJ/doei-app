@@ -902,7 +902,7 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" backgroundImage="chevron.left" catalog="system"/>
                                         <connections>
-                                            <action selector="btnBackAction:" destination="iEq-OG-9SO" eventType="touchUpInside" id="DFZ-UO-xyh"/>
+                                            <action selector="btnBack:" destination="iEq-OG-9SO" eventType="touchUpInside" id="fmF-o0-xr6"/>
                                         </connections>
                                     </button>
                                 </subviews>

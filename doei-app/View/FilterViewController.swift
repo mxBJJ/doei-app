@@ -52,10 +52,7 @@ class FilterViewController: UIViewController {
         
     }
     
-    @IBAction func btnCloseAction(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
+
     @IBAction func btnCategoriesAction(_ sender: Any) {
         
         let filtersVC = storyboard?.instantiateViewController(withIdentifier: "FiltersTableViewController") as! FiltersTableViewController
