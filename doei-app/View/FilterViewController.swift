@@ -58,7 +58,6 @@ class FilterViewController: UIViewController {
         let filtersVC = storyboard?.instantiateViewController(withIdentifier: "FiltersTableViewController") as! FiltersTableViewController
         
         filtersVC.type = "C"
-        
         self.navigationController?.pushViewController(filtersVC, animated: true)
         
     }
@@ -68,7 +67,6 @@ class FilterViewController: UIViewController {
         let filtersVC = storyboard?.instantiateViewController(withIdentifier: "FiltersTableViewController") as! FiltersTableViewController
         
         filtersVC.type = "City"
-        
         self.navigationController?.pushViewController(filtersVC, animated: true)
     }
 }

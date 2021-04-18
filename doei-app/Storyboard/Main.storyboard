@@ -21,7 +21,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eu3-6f-LKk">
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DL6-hg-RS6">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DL6-hg-RS6">
                                         <rect key="frame" x="0.0" y="65" width="414" height="300"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Categoria" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfY-4S-meW">
@@ -124,7 +124,7 @@
                                                     <constraint firstItem="KUR-aM-rSR" firstAttribute="leading" secondItem="6Yz-fi-dAu" secondAttribute="leading" constant="16" id="zLA-n9-Hq8"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cidade" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bo3-G1-wKh">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Odenar por" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bo3-G1-wKh">
                                                 <rect key="frame" x="8" y="162" width="398" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="GaC-OO-n5p"/>
@@ -134,10 +134,9 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="49q-R6-LQZ">
-                                                <rect key="frame" x="78.5" y="191" width="257" height="32"/>
+                                                <rect key="frame" x="24" y="191" width="366" height="46"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="31" id="PZq-Am-D0e"/>
-                                                    <constraint firstAttribute="width" constant="257" id="VvQ-76-l39"/>
+                                                    <constraint firstAttribute="height" constant="45" id="8oc-fH-QJb"/>
                                                 </constraints>
                                                 <segments>
                                                     <segment title="Avaliações"/>
@@ -157,13 +156,14 @@
                                             <constraint firstItem="6Yz-fi-dAu" firstAttribute="leading" secondItem="DL6-hg-RS6" secondAttribute="leading" id="FMY-ML-By4"/>
                                             <constraint firstItem="bo3-G1-wKh" firstAttribute="leading" secondItem="DL6-hg-RS6" secondAttribute="leading" constant="8" id="MRI-DL-W1F"/>
                                             <constraint firstItem="Ko9-eI-IlF" firstAttribute="top" secondItem="rfY-4S-meW" secondAttribute="bottom" constant="8" symbolic="YES" id="Oyq-ox-pfc"/>
+                                            <constraint firstItem="49q-R6-LQZ" firstAttribute="leading" secondItem="DL6-hg-RS6" secondAttribute="leading" constant="24" id="PZX-Im-d4i"/>
                                             <constraint firstItem="Ko9-eI-IlF" firstAttribute="leading" secondItem="DL6-hg-RS6" secondAttribute="leading" id="QPw-fd-ajo"/>
                                             <constraint firstAttribute="trailing" secondItem="e6c-pm-o0N" secondAttribute="trailing" constant="8" id="R5K-R3-WXf"/>
-                                            <constraint firstItem="49q-R6-LQZ" firstAttribute="top" secondItem="bo3-G1-wKh" secondAttribute="bottom" constant="8" symbolic="YES" id="Tno-7d-FpK"/>
-                                            <constraint firstItem="49q-R6-LQZ" firstAttribute="centerX" secondItem="DL6-hg-RS6" secondAttribute="centerX" id="V5n-0S-w6W"/>
                                             <constraint firstItem="e6c-pm-o0N" firstAttribute="leading" secondItem="DL6-hg-RS6" secondAttribute="leading" constant="8" id="i7p-Vt-4k4"/>
                                             <constraint firstAttribute="height" constant="300" id="n6A-Jg-n9t"/>
+                                            <constraint firstAttribute="trailing" secondItem="49q-R6-LQZ" secondAttribute="trailing" constant="24" id="n79-Jc-7ha"/>
                                             <constraint firstAttribute="trailing" secondItem="Ko9-eI-IlF" secondAttribute="trailing" id="pj4-0l-8F9"/>
+                                            <constraint firstItem="49q-R6-LQZ" firstAttribute="top" secondItem="bo3-G1-wKh" secondAttribute="bottom" constant="8" symbolic="YES" id="qK2-z0-NG7"/>
                                             <constraint firstItem="rfY-4S-meW" firstAttribute="top" secondItem="DL6-hg-RS6" secondAttribute="top" constant="8" id="rL6-tD-ZBz"/>
                                             <constraint firstAttribute="trailing" secondItem="6Yz-fi-dAu" secondAttribute="trailing" id="t8r-uc-10f"/>
                                             <constraint firstAttribute="trailing" secondItem="rfY-4S-meW" secondAttribute="trailing" constant="8" id="yXW-MA-oqA"/>
@@ -173,6 +173,7 @@
                                 <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="DL6-hg-RS6" firstAttribute="leading" secondItem="Eu3-6f-LKk" secondAttribute="leading" id="MnP-8q-xZI"/>
+                                    <constraint firstItem="DL6-hg-RS6" firstAttribute="top" secondItem="Eu3-6f-LKk" secondAttribute="top" constant="65" id="Y0a-5e-LzT"/>
                                     <constraint firstAttribute="trailing" secondItem="DL6-hg-RS6" secondAttribute="trailing" id="afz-RI-8wO"/>
                                 </constraints>
                             </view>
@@ -193,7 +194,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bvu-74-DGU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4217.391304347826" y="-1112.2767857142856"/>
+            <point key="canvasLocation" x="4215.9420289855079" y="-1112.2767857142856"/>
         </scene>
         <!--Filters Table View Controller-->
         <scene sceneID="y6m-UW-XNA">

@@ -19,7 +19,6 @@ class FiltersTableViewController: UIViewController {
         setDataFilters()
         
         
-        
     }
     @IBAction func btnBack(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -35,6 +34,10 @@ class FiltersTableViewController: UIViewController {
             self.title = "Cidade"
 
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.topItem!.title = ""
     }
 }
 
