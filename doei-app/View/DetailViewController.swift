@@ -60,4 +60,13 @@ class DetailViewController: UIViewController, FloatRatingViewDelegate {
         present(ac, animated: true)
         print("click")
     }
+    
+    
+    @IBAction func ratingView(_ sender: Any) {
+        
+        let ratingVC = storyboard?.instantiateViewController(withIdentifier: "RatingViewController") as! RatingViewController
+        
+        present(ratingVC, animated: true, completion: nil)
+    }
+    
 }
