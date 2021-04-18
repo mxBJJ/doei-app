@@ -13,7 +13,7 @@
         <!--Filtros-->
         <scene sceneID="eN5-8K-OL0">
             <objects>
-                <viewController storyboardIdentifier="FilterViewController" modalPresentationStyle="fullScreen" id="dhh-W3-UI0" customClass="FilterViewController" customModule="doei_app" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FilterViewController" id="dhh-W3-UI0" customClass="FilterViewController" customModule="doei_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0LF-P6-TXa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -21,19 +21,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eu3-6f-LKk">
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FaM-e3-KYH">
-                                        <rect key="frame" x="8" y="11" width="20" height="18.5"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="25" id="KYg-Vx-J2z"/>
-                                            <constraint firstAttribute="width" constant="20" id="TWJ-En-flr"/>
-                                        </constraints>
-                                        <color key="tintColor" red="0.0039215686269999999" green="0.40000000000000002" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" backgroundImage="multiply" catalog="system"/>
-                                        <connections>
-                                            <action selector="btnCloseAction:" destination="dhh-W3-UI0" eventType="touchUpInside" id="CTk-rP-U5P"/>
-                                        </connections>
-                                    </button>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DL6-hg-RS6">
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DL6-hg-RS6">
                                         <rect key="frame" x="0.0" y="65" width="414" height="300"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Categoria" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfY-4S-meW">
@@ -185,10 +173,7 @@
                                 <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="DL6-hg-RS6" firstAttribute="leading" secondItem="Eu3-6f-LKk" secondAttribute="leading" id="MnP-8q-xZI"/>
-                                    <constraint firstItem="FaM-e3-KYH" firstAttribute="leading" secondItem="Eu3-6f-LKk" secondAttribute="leading" constant="8" id="PMJ-AE-cov"/>
                                     <constraint firstAttribute="trailing" secondItem="DL6-hg-RS6" secondAttribute="trailing" id="afz-RI-8wO"/>
-                                    <constraint firstItem="DL6-hg-RS6" firstAttribute="top" secondItem="FaM-e3-KYH" secondAttribute="bottom" constant="32" id="feF-a9-qno"/>
-                                    <constraint firstItem="FaM-e3-KYH" firstAttribute="top" secondItem="Eu3-6f-LKk" secondAttribute="top" constant="8" id="w1N-8W-EjZ"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -208,7 +193,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bvu-74-DGU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3307.2463768115945" y="-1112.2767857142856"/>
+            <point key="canvasLocation" x="4217.391304347826" y="-1112.2767857142856"/>
         </scene>
         <!--Filters Table View Controller-->
         <scene sceneID="y6m-UW-XNA">
@@ -219,7 +204,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0Wu-rX-3Nh">
-                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="filterCell" textLabel="2CC-Rk-Pcj" style="IBUITableViewCellStyleDefault" id="ANg-c6-bzE" customClass="FilterTableViewCell" customModule="doei_app" customModuleProvider="target">
@@ -248,46 +233,20 @@
                                     <outlet property="delegate" destination="3ju-Fn-V2x" id="qsF-bC-xJx"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filtros" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="riq-Je-sJ4">
-                                <rect key="frame" x="183.5" y="59" width="47" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="47" id="Xko-jV-C1J"/>
-                                    <constraint firstAttribute="height" constant="21" id="ikJ-k3-C3S"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dWD-RW-15p">
-                                <rect key="frame" x="8" y="51" width="20" height="29"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="29" id="SVK-9z-hmW"/>
-                                    <constraint firstAttribute="width" constant="20" id="wn3-Cp-Ibl"/>
-                                </constraints>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" image="chevron.left" catalog="system"/>
-                                <connections>
-                                    <action selector="btnBack:" destination="3ju-Fn-V2x" eventType="touchUpInside" id="qhS-Oe-qiW"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eNG-5E-1Ga"/>
                         <color key="backgroundColor" red="0.0039215686269999999" green="0.40000000000000002" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="dWD-RW-15p" firstAttribute="top" secondItem="eNG-5E-1Ga" secondAttribute="top" constant="7" id="3BS-gw-GIR"/>
                             <constraint firstAttribute="bottom" secondItem="0Wu-rX-3Nh" secondAttribute="bottom" id="M8o-1V-3IE"/>
                             <constraint firstItem="0Wu-rX-3Nh" firstAttribute="trailing" secondItem="eNG-5E-1Ga" secondAttribute="trailing" id="Tc2-fv-M6G"/>
-                            <constraint firstItem="0Wu-rX-3Nh" firstAttribute="top" secondItem="riq-Je-sJ4" secondAttribute="bottom" constant="8" symbolic="YES" id="aL5-FU-Dya"/>
-                            <constraint firstItem="riq-Je-sJ4" firstAttribute="centerX" secondItem="gMA-Hp-a7F" secondAttribute="centerX" id="lyE-sa-3Gg"/>
-                            <constraint firstItem="dWD-RW-15p" firstAttribute="leading" secondItem="eNG-5E-1Ga" secondAttribute="leading" constant="8" id="nnV-0R-3OF"/>
                             <constraint firstItem="0Wu-rX-3Nh" firstAttribute="leading" secondItem="eNG-5E-1Ga" secondAttribute="leading" id="qM9-VB-JHK"/>
-                            <constraint firstItem="0Wu-rX-3Nh" firstAttribute="top" secondItem="eNG-5E-1Ga" secondAttribute="top" constant="44" id="tff-WW-TgL"/>
+                            <constraint firstItem="0Wu-rX-3Nh" firstAttribute="top" secondItem="eNG-5E-1Ga" secondAttribute="top" id="tff-WW-TgL"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O4n-LT-Epo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4084.057971014493" y="-1112.2767857142856"/>
+            <point key="canvasLocation" x="4994.202898550725" y="-1112.2767857142856"/>
         </scene>
         <!--  -->
         <scene sceneID="tne-QT-ifu">
@@ -444,7 +403,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <exit id="wFB-iq-qiQ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3307.2463768115945" y="-472.09821428571428"/>
+            <point key="canvasLocation" x="4217.391304347826" y="-472.09821428571428"/>
         </scene>
         <!--Detalhes-->
         <scene sceneID="JyQ-Tj-EYt">
@@ -742,7 +701,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8NK-kb-EBn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="TQ1-tD-fOM" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4084.057971014493" y="-472.09821428571428"/>
+            <point key="canvasLocation" x="4994.202898550725" y="-472.09821428571428"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="QrS-Ub-XCA">
@@ -1087,7 +1046,6 @@
         <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="google" width="32" height="32"/>
         <image name="megaphone" catalog="system" width="128" height="111"/>
-        <image name="multiply" catalog="system" width="128" height="111"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="phone.circle.fill" catalog="system" width="128" height="121"/>
         <image name="pin-de-localizacao" width="24" height="24"/>

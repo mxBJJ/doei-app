@@ -28,9 +28,12 @@ class FiltersTableViewController: UIViewController {
     func setDataFilters(){
         if(type ==  "C"){
             self.dataSource = categories
+            self.title = "Categoria"
             
         }else{
             self.dataSource = cities
+            self.title = "Cidade"
+
         }
     }
 }

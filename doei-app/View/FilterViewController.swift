@@ -13,20 +13,43 @@ class FilterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setViewsLayouts()
-        
     }
     
     
     func setViewsLayouts()  {
-        segmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: UIControl.State.selected)
+        navigationController?.navigationBar.barTintColor = UIColor(red: 1/255, green: 102/255, blue: 92/255, alpha:  1)
         
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.tintColor = UIColor.white
+        navigationController?.navigationBar.isHidden = false
+        navigationController?.navigationItem.backButtonTitle = " "
+        
+        segmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: UIControl.State.selected)
+        loadLeftBarItem()
+        loadRightBarItem()
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
-        navigationController?.navigationBar.isHidden = false
-        navigationController?.navigationItem.backButtonTitle = " "
+        setViewsLayouts()
+    }
+    
+    func loadLeftBarItem() {
+        let logoutBarButtonItem = UIBarButtonItem(title: "Cancel", style: .done, target: self, action: #selector(leftButton))
+        self.navigationItem.leftBarButtonItem  = logoutBarButtonItem
+    }
+    func loadRightBarItem() {
+        let logoutBarButtonItem = UIBarButtonItem(title: "Limpar", style: .done, target: self, action: #selector(rightButton))
+        self.navigationItem.rightBarButtonItem  = logoutBarButtonItem
+    }
+    
+    @objc private func leftButton() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @objc private func rightButton() {
+        print("Limpou")
+        
     }
     
     @IBAction func btnCloseAction(_ sender: Any) {
@@ -39,7 +62,8 @@ class FilterViewController: UIViewController {
         
         filtersVC.type = "C"
         
-        present(filtersVC, animated: true, completion: nil)
+        self.navigationController?.pushViewController(filtersVC, animated: true)
+        
     }
     
     
@@ -48,7 +72,6 @@ class FilterViewController: UIViewController {
         
         filtersVC.type = "City"
         
-        present(filtersVC, animated: true, completion: nil)
+        self.navigationController?.pushViewController(filtersVC, animated: true)
     }
-    
 }

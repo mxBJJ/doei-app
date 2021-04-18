@@ -19,7 +19,7 @@ class PostViewController: UIViewController, UISearchBarDelegate {
         super.viewDidLoad()
         setViewModel()
         setSearchBar()
-    
+        
         self.view.endEditing(true)
         searchBar.resignFirstResponder()
         
@@ -36,7 +36,7 @@ class PostViewController: UIViewController, UISearchBarDelegate {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-  
+        
     }
     
     func setViewModel(){
@@ -65,10 +65,10 @@ class PostViewController: UIViewController, UISearchBarDelegate {
     @IBAction func btnFilterAction(_ sender: Any) {
         
         let filterVC = storyboard?.instantiateViewController(withIdentifier: "FilterViewController") as! FilterViewController
-        
-        filterVC.modalPresentationStyle = .overFullScreen
-        
-        present(filterVC, animated: true, completion: nil)
+
+        let navController = UINavigationController(rootViewController: filterVC)
+        navController.modalPresentationStyle = .fullScreen
+        navigationController?.present(navController, animated: true, completion: nil)
     }
     
     
@@ -97,7 +97,7 @@ extension PostViewController : UICollectionViewDelegate, UICollectionViewDataSou
         detailVC.post = dataSource[indexPath.row]
         
         self.navigationController?.pushViewController(detailVC, animated: true)
-
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
