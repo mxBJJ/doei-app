@@ -44,9 +44,7 @@ class DetailViewController: UIViewController, FloatRatingViewDelegate {
         
         
         if let myDate = post?.createdAt {
-            
-            print(myDate)
-                        
+                                    
             let dateFormatter = DateFormatter()
             dateFormatter.locale = .init(identifier: "en_US_POSIX")
             dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
