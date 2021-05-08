@@ -16,14 +16,31 @@ class PostViewController: UIViewController, UISearchBarDelegate {
     var viewModel: PostViewModel?
     var logado = false
     
+    
+    private let refreshControl = UIRefreshControl()
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        refreshControl.addTarget(self, action: #selector(didPullToRefresh(_:)), for: .valueChanged)
+        refreshControl.transform = CGAffineTransform(scaleX: 0.60, y: 0.60)
+
+        collectionView.alwaysBounceVertical = true
+        collectionView.refreshControl = refreshControl
+        
         setViewModel()
         setSearchBar()
         
         self.view.endEditing(true)
         searchBar.resignFirstResponder()
         
+    }
+    
+    @objc
+    private func didPullToRefresh(_ sender: Any) {
+        setViewModel()
+        refreshControl.endRefreshing()
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {

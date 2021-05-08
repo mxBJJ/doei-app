@@ -46,13 +46,11 @@ class DetailViewController: UIViewController, FloatRatingViewDelegate {
         if let myDate = post?.createdAt {
             
             print(myDate)
-            
-            let date2 = myDate
-            
+                        
             let dateFormatter = DateFormatter()
             dateFormatter.locale = .init(identifier: "en_US_POSIX")
             dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
-            if let date = dateFormatter.date(from: date2) {
+            if let date = dateFormatter.date(from: myDate) {
                 print(date)
                 dateFormatter.dateFormat = "dd/MM/YYYY"
                 let finalDate = dateFormatter.string(from: date)
@@ -60,7 +58,6 @@ class DetailViewController: UIViewController, FloatRatingViewDelegate {
                 self.lblDate.text = "Publicado em \(finalDate)"
 
             }
-            
             
             self.lblTitle.text = post?.title
             self.postImage.kf.setImage(with: URL(string: (post?.img)!))
@@ -82,12 +79,11 @@ class DetailViewController: UIViewController, FloatRatingViewDelegate {
     }
     
     @IBAction func btnShareAction(_ sender: Any) {
-        let items = ["Somente no DoeiApp!",URL(string: (post?.img)!)!] as [Any]
+        let items = ["Somente no DoeiApp!",URL(string: "google.com")!] as [Any]
         let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
         present(ac, animated: true)
-        print("click")
+        
     }
-    
     
     @IBAction func ratingView(_ sender: Any) {
         
