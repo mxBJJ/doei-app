@@ -9,14 +9,14 @@ import UIKit
 
 class FilterViewController: UIViewController {
     
-  
+    
     @IBOutlet weak var lblCategory: UILabel!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var lblCity: UILabel!
     
     var btnCategoryTitle: String = "Categorias/Subcategorias"
     var btnCityTitle: String = "Cidade"
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,8 +39,8 @@ class FilterViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         setViewsLayouts()
-        lblCategory.text = btnCategoryTitle
-        lblCity.text = btnCityTitle
+        lblCategory.text = UserDefaults.standard.string(forKey: "categorias")
+        lblCity.text = UserDefaults.standard.string(forKey: "cidade")
     }
     
     func loadLeftBarItem() {
@@ -57,11 +57,15 @@ class FilterViewController: UIViewController {
     }
     
     @objc private func rightButton() {
+        
+        UserDefaults.standard.setValue("Categorias/Subcategorias", forKey: "categorias")
+        UserDefaults.standard.setValue("Cidade", forKey: "cidade")
+        
         lblCategory.text = "Categorias/Subcategorias"
         lblCity.text = "Cidade"
     }
     
-
+    
     @IBAction func btnCategoriesAction(_ sender: Any) {
         
         let filtersVC = storyboard?.instantiateViewController(withIdentifier: "FiltersTableViewController") as! FiltersTableViewController

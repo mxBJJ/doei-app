@@ -84,6 +84,9 @@ class PostViewController: UIViewController, UISearchBarDelegate {
     
     @IBAction func btnFilterAction(_ sender: Any) {
         
+        UserDefaults.standard.setValue("Categorias/Subcategorias", forKey: "categorias")
+        UserDefaults.standard.setValue("Cidade", forKey: "cidade")
+        
         let filterVC = storyboard?.instantiateViewController(withIdentifier: "FilterViewController") as! FilterViewController
 
         let navController = UINavigationController(rootViewController: filterVC)

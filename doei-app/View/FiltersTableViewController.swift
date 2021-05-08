@@ -57,9 +57,9 @@ extension FiltersTableViewController: UITableViewDelegate, UITableViewDataSource
         let filtersVC = storyboard?.instantiateViewController(withIdentifier: "FilterViewController") as! FilterViewController
         
         if(type == "C"){
-            filtersVC.btnCategoryTitle = dataSource[indexPath.row]
+            UserDefaults.standard.setValue(dataSource[indexPath.row], forKey: "categorias")
         }else {
-            filtersVC.btnCityTitle = dataSource[indexPath.row]
+            UserDefaults.standard.setValue(dataSource[indexPath.row], forKey: "cidade")
         }
         
         self.navigationController?.pushViewController(filtersVC, animated: true)
