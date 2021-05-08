@@ -7,10 +7,13 @@
 
 import Foundation
 
-struct Post {
+struct Post: Codable {
     var _id: String?
     var title: String?
+    var description: String?
+    var location: String?
     var state: String?
-    var giverAdress: String?
-    var imgUrl: String?
+    var img: String?
+    var createdAt: String?
+    var user: User?
 }

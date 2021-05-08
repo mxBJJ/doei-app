@@ -25,7 +25,7 @@ class CreatePostViewController: UIViewController {
         print("TOCOU")
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {        
         if(!logado){
             tabBarController?.selectedIndex = 0
         }

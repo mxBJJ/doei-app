@@ -7,7 +7,25 @@
 		<key>doei-app.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>5</integer>
+			<integer>6</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>FED0CD07262629020068AC69</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FED0CD1D262629060068AC69</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FED0CD28262629060068AC69</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

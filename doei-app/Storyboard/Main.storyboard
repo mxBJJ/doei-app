@@ -398,6 +398,7 @@
                         <barButtonItem key="backBarButtonItem" title="  " id="wXY-PP-82h"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="collectionView" destination="TEd-ri-Xgw" id="wGh-wR-rAD"/>
                         <outlet property="searchBar" destination="03C-gW-oJm" id="RX7-Ty-zXT"/>
                     </connections>
                 </viewController>
@@ -519,15 +520,6 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Video game acompanhar 2 cartuhos: Mortal Kombat e Mario Cart" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZFL-4T-R7J">
-                                                        <rect key="frame" x="20" y="94" width="374" height="80"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="80" id="NRp-zl-nAQ"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="16"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contato" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZbM-hW-7XN">
                                                         <rect key="frame" x="20" y="212" width="374" height="21"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
@@ -583,11 +575,22 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descrição do post" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edL-0T-AEf">
+                                                        <rect key="frame" x="20" y="94" width="374" height="77"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="77" id="zgQ-ip-qUT"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstItem="i9k-a2-y8j" firstAttribute="top" secondItem="CDO-6N-90e" secondAttribute="bottom" constant="32" id="56i-SI-yKW"/>
+                                                    <constraint firstItem="edL-0T-AEf" firstAttribute="leading" secondItem="iMK-4e-sBY" secondAttribute="leading" constant="20" symbolic="YES" id="7Gp-Hn-jbq"/>
                                                     <constraint firstItem="CDO-6N-90e" firstAttribute="top" secondItem="lE2-uA-5JU" secondAttribute="bottom" constant="32" id="CPr-IA-nYf"/>
+                                                    <constraint firstItem="FA3-MM-aHD" firstAttribute="top" secondItem="edL-0T-AEf" secondAttribute="bottom" constant="8" symbolic="YES" id="Db6-ZE-a5p"/>
                                                     <constraint firstItem="lE2-uA-5JU" firstAttribute="leading" secondItem="d9B-wM-apn" secondAttribute="trailing" constant="8" symbolic="YES" id="JPf-gI-gd1"/>
                                                     <constraint firstItem="UQC-3x-ap8" firstAttribute="leading" secondItem="iMK-4e-sBY" secondAttribute="leading" constant="20" symbolic="YES" id="LCK-Sh-LFe"/>
                                                     <constraint firstItem="FA3-MM-aHD" firstAttribute="trailing" secondItem="ZbM-hW-7XN" secondAttribute="trailing" id="MuX-0O-lEd"/>
@@ -598,23 +601,21 @@
                                                     <constraint firstAttribute="trailing" secondItem="qUN-Hk-NuH" secondAttribute="trailing" constant="20" symbolic="YES" id="SSH-8s-zRX"/>
                                                     <constraint firstItem="PXv-Kc-Iym" firstAttribute="top" secondItem="iMK-4e-sBY" secondAttribute="top" constant="32" id="VOV-4j-Nnf"/>
                                                     <constraint firstAttribute="trailing" secondItem="UQC-3x-ap8" secondAttribute="trailing" constant="20" symbolic="YES" id="WXV-SU-Pds"/>
+                                                    <constraint firstAttribute="trailing" secondItem="edL-0T-AEf" secondAttribute="trailing" constant="20" symbolic="YES" id="Xtv-va-wyX"/>
                                                     <constraint firstItem="FA3-MM-aHD" firstAttribute="leading" secondItem="d9B-wM-apn" secondAttribute="leading" id="ZwN-IC-ihZ"/>
                                                     <constraint firstItem="FA3-MM-aHD" firstAttribute="leading" secondItem="iMK-4e-sBY" secondAttribute="leading" constant="20" symbolic="YES" id="anr-7Y-iXU"/>
                                                     <constraint firstAttribute="trailing" secondItem="PXv-Kc-Iym" secondAttribute="trailing" constant="20" symbolic="YES" id="bNf-DP-Ssd"/>
-                                                    <constraint firstItem="ZFL-4T-R7J" firstAttribute="top" secondItem="UQC-3x-ap8" secondAttribute="bottom" constant="8" symbolic="YES" id="eAE-ZA-Tdc"/>
                                                     <constraint firstItem="qUN-Hk-NuH" firstAttribute="leading" secondItem="iMK-4e-sBY" secondAttribute="leading" constant="20" symbolic="YES" id="fxL-7r-Rrt"/>
-                                                    <constraint firstAttribute="trailing" secondItem="ZFL-4T-R7J" secondAttribute="trailing" constant="20" symbolic="YES" id="gU5-6k-3MU"/>
+                                                    <constraint firstItem="edL-0T-AEf" firstAttribute="top" secondItem="UQC-3x-ap8" secondAttribute="bottom" constant="8" symbolic="YES" id="gxu-6x-Naq"/>
                                                     <constraint firstItem="FA3-MM-aHD" firstAttribute="leading" secondItem="ZbM-hW-7XN" secondAttribute="leading" id="gzB-tJ-Yra"/>
                                                     <constraint firstItem="d9B-wM-apn" firstAttribute="leading" secondItem="iMK-4e-sBY" secondAttribute="leading" constant="20" symbolic="YES" id="h3r-kd-vAS"/>
                                                     <constraint firstItem="CDO-6N-90e" firstAttribute="leading" secondItem="iMK-4e-sBY" secondAttribute="leading" constant="20" symbolic="YES" id="jxj-pO-KQE"/>
                                                     <constraint firstItem="ZbM-hW-7XN" firstAttribute="top" secondItem="FA3-MM-aHD" secondAttribute="bottom" constant="32" id="kEK-L6-HiB"/>
-                                                    <constraint firstItem="FA3-MM-aHD" firstAttribute="top" secondItem="ZFL-4T-R7J" secondAttribute="bottom" constant="5" id="lPw-MJ-sfq"/>
                                                     <constraint firstAttribute="trailing" secondItem="FA3-MM-aHD" secondAttribute="trailing" constant="20" symbolic="YES" id="lak-ht-uEW"/>
                                                     <constraint firstItem="lE2-uA-5JU" firstAttribute="top" secondItem="ZbM-hW-7XN" secondAttribute="bottom" constant="8" symbolic="YES" id="ltj-Zr-34u"/>
                                                     <constraint firstAttribute="trailing" secondItem="lE2-uA-5JU" secondAttribute="trailing" constant="20" symbolic="YES" id="m7k-mr-NG4"/>
                                                     <constraint firstItem="i9k-a2-y8j" firstAttribute="leading" secondItem="iMK-4e-sBY" secondAttribute="leading" constant="20" symbolic="YES" id="m7r-dR-frK"/>
                                                     <constraint firstItem="d9B-wM-apn" firstAttribute="top" secondItem="ZbM-hW-7XN" secondAttribute="bottom" constant="18" id="sEX-xz-xGu"/>
-                                                    <constraint firstItem="ZFL-4T-R7J" firstAttribute="leading" secondItem="iMK-4e-sBY" secondAttribute="leading" constant="20" symbolic="YES" id="v5H-3e-NG6"/>
                                                     <constraint firstItem="UQC-3x-ap8" firstAttribute="top" secondItem="PXv-Kc-Iym" secondAttribute="bottom" constant="32" id="vt6-dZ-UQ3"/>
                                                     <constraint firstItem="PXv-Kc-Iym" firstAttribute="leading" secondItem="iMK-4e-sBY" secondAttribute="leading" constant="20" symbolic="YES" id="wBY-43-dKh"/>
                                                 </constraints>
@@ -740,6 +741,10 @@
                     <navigationItem key="navigationItem" title="Detalhes" largeTitleDisplayMode="never" id="zfS-zf-PIO"/>
                     <connections>
                         <outlet property="btnWant" destination="JrO-N7-hZc" id="poA-jM-iPc"/>
+                        <outlet property="lblContact" destination="lE2-uA-5JU" id="xhM-bg-QlU"/>
+                        <outlet property="lblDate" destination="XKj-DB-S9I" id="sfo-gz-dUo"/>
+                        <outlet property="lblDescription" destination="edL-0T-AEf" id="2QY-Z1-DjF"/>
+                        <outlet property="lblLocation" destination="qUN-Hk-NuH" id="1GM-3P-9h3"/>
                         <outlet property="lblState" destination="NSy-5Q-QIb" id="3jR-I6-6zE"/>
                         <outlet property="lblTitle" destination="Bdf-GN-2nK" id="EiT-9H-ccf"/>
                         <outlet property="postImage" destination="Xzi-hy-lM0" id="d3G-Cr-zcE"/>

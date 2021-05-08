@@ -8,6 +8,7 @@ target 'doei-app' do
   # Pods for doei-app
   pod 'Kingfisher', '~> 6.0'
   pod 'FloatRatingView', '~> 4'
+  pod 'Alamofire', '~> 5.2'
   
   target 'doei-appTests' do
     inherit! :search_paths

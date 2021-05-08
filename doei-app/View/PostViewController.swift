@@ -10,8 +10,9 @@ import Kingfisher
 
 class PostViewController: UIViewController, UISearchBarDelegate {
     
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var searchBar: UISearchBar!
-    var dataSource: [Post] = []
+    var dataSource: Posts?
     var viewModel: PostViewModel?
     var logado = false
     
@@ -31,6 +32,7 @@ class PostViewController: UIViewController, UISearchBarDelegate {
     
     
     override func viewWillAppear(_ animated: Bool) {
+        print(API.baseUrl)
         navigationController?.navigationBar.isHidden = true
         navigationController?.navigationItem.backButtonTitle = ""
     }
@@ -41,8 +43,10 @@ class PostViewController: UIViewController, UISearchBarDelegate {
     
     func setViewModel(){
         self.viewModel = PostViewModel()
-        self.viewModel?.getPosts()
-        self.dataSource = (self.viewModel?.dataSource)!
+        self.viewModel?.getPosts(completion: { (posts) in
+            self.dataSource = posts!
+            self.collectionView.reloadData()
+        })
     }
     
     func setCellAsCard(cell: UICollectionViewCell){
@@ -84,17 +88,17 @@ extension PostViewController : UICollectionViewDelegate, UICollectionViewDataSou
         
         self.setCellAsCard(cell: cell)
         
-        cell.productName.text = dataSource[indexPath.row].title
-        cell.productState.text = dataSource[indexPath.row].state
-        cell.giverAdress.text = dataSource[indexPath.row].giverAdress
-        cell.postImage.kf.setImage(with: URL(string: dataSource[indexPath.row].imgUrl!))
+        cell.productName.text = dataSource?.posts?[indexPath.row].title
+        cell.giverAdress.text = dataSource?.posts?[indexPath.row].location
+        cell.productState.text = dataSource?.posts?[indexPath.row].state
+        cell.postImage.kf.setImage(with: URL(string: (dataSource?.posts?[indexPath.row].img)!))
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let detailVC = self.storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
-        detailVC.post = dataSource[indexPath.row]
+        detailVC.post = dataSource?.posts?[indexPath.row]
         
         self.navigationController?.pushViewController(detailVC, animated: true)
         

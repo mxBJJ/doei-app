@@ -17,8 +17,11 @@ class DetailViewController: UIViewController, FloatRatingViewDelegate {
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var lblState: UILabel!
     @IBOutlet weak var ratingView: FloatRatingView!
-    
+    @IBOutlet weak var lblContact: UILabel!
+    @IBOutlet weak var lblLocation: UILabel!
     @IBOutlet weak var postImage: UIImageView!
+    @IBOutlet weak var lblDescription: UILabel!
+    @IBOutlet weak var lblDate: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,15 +41,39 @@ class DetailViewController: UIViewController, FloatRatingViewDelegate {
     
     
     func setDataInViews(){
-        self.lblTitle.text = post?.title
-        self.lblState.text = post?.state
-        self.postImage.kf.setImage(with: URL(string: (post?.imgUrl)!))
         
+        
+        if let myDate = post?.createdAt {
+            
+            print(myDate)
+            
+            let date2 = myDate
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.locale = .init(identifier: "en_US_POSIX")
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+            if let date = dateFormatter.date(from: date2) {
+                print(date)
+                dateFormatter.dateFormat = "dd/MM/YYYY"
+                let finalDate = dateFormatter.string(from: date)
+                print(finalDate)
+                self.lblDate.text = "Publicado em \(finalDate)"
+
+            }
+            
+            
+            self.lblTitle.text = post?.title
+            self.postImage.kf.setImage(with: URL(string: (post?.img)!))
+            self.lblContact.text = post?.user?.phone
+            self.lblState.text = post?.state
+            self.lblLocation.text = post?.location
+            self.lblDescription.text = post?.description
+        }
     }
     
     func setViewsStyles(){
         btnWant.layer.cornerRadius = 20
-        self.ratingView.rating = 2.5
+        self.ratingView.rating = (self.post?.user?.rating!)!
         self.ratingView.editable = false
     }
     
@@ -55,7 +82,7 @@ class DetailViewController: UIViewController, FloatRatingViewDelegate {
     }
     
     @IBAction func btnShareAction(_ sender: Any) {
-        let items = ["Somente no DoeiApp!",URL(string: (post?.imgUrl)!)!] as [Any]
+        let items = ["Somente no DoeiApp!",URL(string: (post?.img)!)!] as [Any]
         let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
         present(ac, animated: true)
         print("click")

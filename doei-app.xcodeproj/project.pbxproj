@@ -15,9 +15,14 @@
 		FE1843E726278CD800065651 /* MyAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1843E626278CD800065651 /* MyAccountViewController.swift */; };
 		FE1843EC2627905E00065651 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1843EB2627905E00065651 /* LoginViewController.swift */; };
 		FE1843F12627A40300065651 /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1843F02627A40300065651 /* CreatePostViewController.swift */; };
+		FE2ACC5B26408D8300498282 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2ACC5A26408D8300498282 /* Endpoints.swift */; };
+		FE2ACC6026408E5200498282 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2ACC5F26408E5200498282 /* API.swift */; };
 		FE69E6D1262BC428002B4BCD /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE69E6D0262BC428002B4BCD /* FilterViewController.swift */; };
 		FE69E6D6262BCBDD002B4BCD /* FilterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE69E6D5262BCBDD002B4BCD /* FilterTableViewCell.swift */; };
 		FE86BD9E262CAFB2008042C4 /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE86BD9D262CAFB2008042C4 /* RatingViewController.swift */; };
+		FEA321AF2646D52700DFCF49 /* PostsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA321AE2646D52700DFCF49 /* PostsService.swift */; };
+		FEA321B42646D63100DFCF49 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA321B32646D63100DFCF49 /* User.swift */; };
+		FEA321B92646E30400DFCF49 /* Posts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA321B82646E30400DFCF49 /* Posts.swift */; };
 		FED0CD0C262629020068AC69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED0CD0B262629020068AC69 /* AppDelegate.swift */; };
 		FED0CD0E262629020068AC69 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED0CD0D262629020068AC69 /* SceneDelegate.swift */; };
 		FED0CD10262629020068AC69 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED0CD0F262629020068AC69 /* PostViewController.swift */; };
@@ -64,9 +69,14 @@
 		FE1843E626278CD800065651 /* MyAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccountViewController.swift; sourceTree = "<group>"; };
 		FE1843EB2627905E00065651 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FE1843F02627A40300065651 /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
+		FE2ACC5A26408D8300498282 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
+		FE2ACC5F26408E5200498282 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		FE69E6D0262BC428002B4BCD /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		FE69E6D5262BCBDD002B4BCD /* FilterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTableViewCell.swift; sourceTree = "<group>"; };
 		FE86BD9D262CAFB2008042C4 /* RatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingViewController.swift; sourceTree = "<group>"; };
+		FEA321AE2646D52700DFCF49 /* PostsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsService.swift; sourceTree = "<group>"; };
+		FEA321B32646D63100DFCF49 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		FEA321B82646E30400DFCF49 /* Posts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Posts.swift; sourceTree = "<group>"; };
 		FED0CD08262629020068AC69 /* doei-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "doei-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FED0CD0B262629020068AC69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FED0CD0D262629020068AC69 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -223,6 +233,8 @@
 			isa = PBXGroup;
 			children = (
 				FED0CD632626376D0068AC69 /* Post.swift */,
+				FEA321B32646D63100DFCF49 /* User.swift */,
+				FEA321B82646E30400DFCF49 /* Posts.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -230,6 +242,9 @@
 		FED0CD4826262C0D0068AC69 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				FE2ACC5A26408D8300498282 /* Endpoints.swift */,
+				FE2ACC5F26408E5200498282 /* API.swift */,
+				FEA321AE2646D52700DFCF49 /* PostsService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -495,15 +510,20 @@
 				FE1843EC2627905E00065651 /* LoginViewController.swift in Sources */,
 				FED0CD57262637290068AC69 /* PostViewModel.swift in Sources */,
 				FED0CD4F26262EAD0068AC69 /* PostCollectionViewCell.swift in Sources */,
+				FE2ACC5B26408D8300498282 /* Endpoints.swift in Sources */,
 				FE1843E726278CD800065651 /* MyAccountViewController.swift in Sources */,
 				FEEA7A19262C6CB1005E36B0 /* FiltersTableViewController.swift in Sources */,
 				FE69E6D1262BC428002B4BCD /* FilterViewController.swift in Sources */,
 				FED0CD10262629020068AC69 /* PostViewController.swift in Sources */,
+				FEA321AF2646D52700DFCF49 /* PostsService.swift in Sources */,
 				FED0CD642626376D0068AC69 /* Post.swift in Sources */,
 				FED0CD0C262629020068AC69 /* AppDelegate.swift in Sources */,
 				FE69E6D6262BCBDD002B4BCD /* FilterTableViewCell.swift in Sources */,
+				FEA321B92646E30400DFCF49 /* Posts.swift in Sources */,
 				FED0CD0E262629020068AC69 /* SceneDelegate.swift in Sources */,
+				FEA321B42646D63100DFCF49 /* User.swift in Sources */,
 				FE0866DA262671FC00E28A77 /* DetailViewController.swift in Sources */,
+				FE2ACC6026408E5200498282 /* API.swift in Sources */,
 				FE86BD9E262CAFB2008042C4 /* RatingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
