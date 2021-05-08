@@ -51,10 +51,8 @@ class DetailViewController: UIViewController, FloatRatingViewDelegate {
             dateFormatter.locale = .init(identifier: "en_US_POSIX")
             dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
             if let date = dateFormatter.date(from: myDate) {
-                print(date)
                 dateFormatter.dateFormat = "dd/MM/YYYY"
                 let finalDate = dateFormatter.string(from: date)
-                print(finalDate)
                 self.lblDate.text = "Publicado em \(finalDate)"
 
             }

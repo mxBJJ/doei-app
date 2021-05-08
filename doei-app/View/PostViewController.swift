@@ -49,7 +49,6 @@ class PostViewController: UIViewController, UISearchBarDelegate {
     
     
     override func viewWillAppear(_ animated: Bool) {
-        print(API.baseUrl)
         navigationController?.navigationBar.isHidden = true
         navigationController?.navigationItem.backButtonTitle = ""
     }
