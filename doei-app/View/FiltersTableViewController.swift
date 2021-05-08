@@ -53,5 +53,18 @@ extension FiltersTableViewController: UITableViewDelegate, UITableViewDataSource
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let filtersVC = storyboard?.instantiateViewController(withIdentifier: "FilterViewController") as! FilterViewController
+        
+        if(type == "C"){
+            filtersVC.btnCategoryTitle = dataSource[indexPath.row]
+        }else {
+            filtersVC.btnCityTitle = dataSource[indexPath.row]
+        }
+        
+        self.navigationController?.pushViewController(filtersVC, animated: true)
+        
+    }
+    
     
 }

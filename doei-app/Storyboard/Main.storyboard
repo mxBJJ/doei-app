@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8fi-jh-aOf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8fi-jh-aOf">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -169,12 +169,36 @@
                                             <constraint firstAttribute="trailing" secondItem="rfY-4S-meW" secondAttribute="trailing" constant="8" id="yXW-MA-oqA"/>
                                         </constraints>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6jf-Hg-NzS">
+                                        <rect key="frame" x="8" y="406" width="398" height="40"/>
+                                        <color key="backgroundColor" red="0.0039215686269999999" green="0.40000000000000002" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="0Ve-k1-j6g"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="FILTRAR">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <integer key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="btnShareAction:" destination="s0M-TO-MZd" eventType="touchUpInside" id="Ba4-hc-HoT"/>
+                                            <action selector="btnWantAction:" destination="TQ1-tD-fOM" eventType="touchUpInside" id="Btp-uX-BrI"/>
+                                            <action selector="btnWantAction:" destination="s0M-TO-MZd" eventType="touchUpInside" id="fOb-QZ-vPl"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="6jf-Hg-NzS" firstAttribute="leading" secondItem="Eu3-6f-LKk" secondAttribute="leading" constant="8" id="4rZ-aC-dJw"/>
+                                    <constraint firstItem="6jf-Hg-NzS" firstAttribute="top" secondItem="DL6-hg-RS6" secondAttribute="bottom" constant="41" id="KpI-8P-KDb"/>
                                     <constraint firstItem="DL6-hg-RS6" firstAttribute="leading" secondItem="Eu3-6f-LKk" secondAttribute="leading" id="MnP-8q-xZI"/>
                                     <constraint firstItem="DL6-hg-RS6" firstAttribute="top" secondItem="Eu3-6f-LKk" secondAttribute="top" constant="65" id="Y0a-5e-LzT"/>
                                     <constraint firstAttribute="trailing" secondItem="DL6-hg-RS6" secondAttribute="trailing" id="afz-RI-8wO"/>
+                                    <constraint firstAttribute="trailing" secondItem="6jf-Hg-NzS" secondAttribute="trailing" constant="8" id="awy-Rr-G6Z"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -189,6 +213,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Filtros" id="TPh-eG-LuI"/>
                     <connections>
+                        <outlet property="lblCategory" destination="lrk-wG-jW1" id="L9e-9z-tMf"/>
+                        <outlet property="lblCity" destination="KUR-aM-rSR" id="ha8-dq-R07"/>
                         <outlet property="segmentedControl" destination="49q-R6-LQZ" id="xW2-Iv-YBc"/>
                     </connections>
                 </viewController>
@@ -209,7 +235,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="filterCell" textLabel="2CC-Rk-Pcj" style="IBUITableViewCellStyleDefault" id="ANg-c6-bzE" customClass="FilterTableViewCell" customModule="doei_app" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ANg-c6-bzE" id="PCL-M8-AM4">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
