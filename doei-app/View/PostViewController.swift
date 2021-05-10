@@ -16,24 +16,25 @@ class PostViewController: UIViewController, UISearchBarDelegate {
     var viewModel: PostViewModel?
     var logado = false
     
+    var filteredData: [Post] = []
+    var searching: Bool = false
     
     private let refreshControl = UIRefreshControl()
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        collectionView.keyboardDismissMode = .onDrag
+        
         refreshControl.addTarget(self, action: #selector(didPullToRefresh(_:)), for: .valueChanged)
         refreshControl.transform = CGAffineTransform(scaleX: 0.60, y: 0.60)
-
+        
         collectionView.alwaysBounceVertical = true
         collectionView.refreshControl = refreshControl
         
         setViewModel()
         setSearchBar()
-        
-        self.view.endEditing(true)
-        searchBar.resignFirstResponder()
         
     }
     
@@ -44,6 +45,10 @@ class PostViewController: UIViewController, UISearchBarDelegate {
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         searchBar.endEditing(true)
     }
     
@@ -88,29 +93,53 @@ class PostViewController: UIViewController, UISearchBarDelegate {
         UserDefaults.standard.setValue("Cidade", forKey: "cidade")
         
         let filterVC = storyboard?.instantiateViewController(withIdentifier: "FilterViewController") as! FilterViewController
-
+        
         let navController = UINavigationController(rootViewController: filterVC)
         navController.modalPresentationStyle = .fullScreen
         navigationController?.present(navController, animated: true, completion: nil)
     }
     
-    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        if let data = dataSource?.posts {
+            
+            filteredData = data.filter({$0.title!.lowercased().contains(searchText.lowercased()) })
+            searching = true
+            collectionView.reloadData()
+        }
+    }
 }
 
 extension PostViewController : UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.viewModel!.dataSourceSize()
-    }
+        if searching == true && filteredData.count != 0{
+            return filteredData.count
+        }else{
+            return dataSource?.posts?.count ?? 0
+        }    }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "postCell", for: indexPath) as! PostCollectionViewCell
         
         self.setCellAsCard(cell: cell)
         
-        cell.productName.text = dataSource?.posts?[indexPath.row].title
-        cell.giverAdress.text = dataSource?.posts?[indexPath.row].location
-        cell.productState.text = dataSource?.posts?[indexPath.row].state
-        cell.postImage.kf.setImage(with: URL(string: (dataSource?.posts?[indexPath.row].img)!))
+        if searching == true && filteredData.count != 0{
+            
+            
+            
+            cell.productName.text = filteredData[indexPath.row].title
+            cell.giverAdress.text = filteredData[indexPath.row].location
+            cell.productState.text = filteredData[indexPath.row].state
+            cell.postImage.kf.setImage(with: URL(string: (filteredData[indexPath.row].img)!))
+            
+        }else{
+            
+            cell.productName.text = dataSource?.posts?[indexPath.row].title
+            cell.giverAdress.text = dataSource?.posts?[indexPath.row].location
+            cell.productState.text = dataSource?.posts?[indexPath.row].state
+            cell.postImage.kf.setImage(with: URL(string: (dataSource?.posts?[indexPath.row].img)!))
+            
+        }
         
         return cell
     }
@@ -122,11 +151,4 @@ extension PostViewController : UICollectionViewDelegate, UICollectionViewDataSou
         self.navigationController?.pushViewController(detailVC, animated: true)
         
     }
-    
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        searchBar.resignFirstResponder()
-        searchBar.endEditing(true)
-    }
-    
-    
 }
