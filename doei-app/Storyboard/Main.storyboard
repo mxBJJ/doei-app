@@ -406,16 +406,34 @@
                                     <constraint firstItem="03C-gW-oJm" firstAttribute="top" secondItem="hzY-M2-347" secondAttribute="top" constant="2" id="x9t-FX-nHc"/>
                                 </constraints>
                             </view>
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xAN-UY-ZhW">
+                                <rect key="frame" x="0.0" y="42" width="414" height="683"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="ifs-3G-NmS">
+                                        <rect key="frame" x="197" y="331.5" width="20" height="20"/>
+                                        <color key="color" red="0.0039215686269999999" green="0.40000000000000002" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="ifs-3G-NmS" firstAttribute="centerX" secondItem="xAN-UY-ZhW" secondAttribute="centerX" id="ZFj-l9-SEs"/>
+                                    <constraint firstItem="ifs-3G-NmS" firstAttribute="centerY" secondItem="xAN-UY-ZhW" secondAttribute="centerY" id="nif-Le-Z47"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.0039215686269999999" green="0.40000000000000002" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="hzY-M2-347" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5Zd-NM-dmQ"/>
+                            <constraint firstItem="xAN-UY-ZhW" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="7S7-QE-8Sl"/>
+                            <constraint firstItem="xAN-UY-ZhW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7cy-Qp-3XI"/>
                             <constraint firstItem="TEd-ri-Xgw" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="891-oQ-fQs"/>
+                            <constraint firstItem="xAN-UY-ZhW" firstAttribute="top" secondItem="hzY-M2-347" secondAttribute="bottom" constant="8" symbolic="YES" id="KxF-Mq-YVO"/>
                             <constraint firstAttribute="trailing" secondItem="TEd-ri-Xgw" secondAttribute="trailing" id="R6x-lT-qe1"/>
                             <constraint firstItem="TEd-ri-Xgw" firstAttribute="top" secondItem="hzY-M2-347" secondAttribute="bottom" constant="8" symbolic="YES" id="RIk-be-Lhf"/>
                             <constraint firstItem="hzY-M2-347" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="UXH-Ps-1Xf"/>
+                            <constraint firstItem="xAN-UY-ZhW" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="YJ9-P6-ci0"/>
                             <constraint firstItem="TEd-ri-Xgw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="bSI-7M-qxQ"/>
                             <constraint firstItem="hzY-M2-347" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="rQZ-9a-KnQ"/>
                         </constraints>
@@ -425,13 +443,14 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="TEd-ri-Xgw" id="wGh-wR-rAD"/>
+                        <outlet property="loadingView" destination="xAN-UY-ZhW" id="WrR-HI-Pi9"/>
                         <outlet property="searchBar" destination="03C-gW-oJm" id="RX7-Ty-zXT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <exit id="wFB-iq-qiQ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4217.391304347826" y="-472.09821428571428"/>
+            <point key="canvasLocation" x="4215.9420289855079" y="-472.09821428571428"/>
         </scene>
         <!--Detalhes-->
         <scene sceneID="JyQ-Tj-EYt">
@@ -965,6 +984,9 @@
                                                                 </constraints>
                                                                 <color key="tintColor" red="0.0039215686269999999" green="0.40000000000000002" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <state key="normal" backgroundImage="camera" catalog="system"/>
+                                                                <connections>
+                                                                    <action selector="pickImage:" destination="c6g-dx-MWZ" eventType="touchUpInside" id="mOd-RP-wne"/>
+                                                                </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adicionar foto" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lzc-MP-W5F">
                                                                 <rect key="frame" x="129.5" y="95.5" width="115" height="21"/>
@@ -985,13 +1007,21 @@
                                                             <constraint firstItem="8Bh-MU-5Qd" firstAttribute="centerY" secondItem="Zu6-OB-ieT" secondAttribute="centerY" constant="-15" id="uCZ-3B-YTn"/>
                                                         </constraints>
                                                     </view>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rwj-FG-5kk">
+                                                        <rect key="frame" x="20" y="8" width="374" height="182"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="bottom" secondItem="Zu6-OB-ieT" secondAttribute="bottom" constant="20" id="3EO-VT-X8n"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Rwj-FG-5kk" secondAttribute="trailing" constant="20" symbolic="YES" id="JG1-vE-N2q"/>
                                                     <constraint firstItem="Zu6-OB-ieT" firstAttribute="leading" secondItem="9CP-io-WtP" secondAttribute="leading" constant="20" id="Ml8-il-9PV"/>
+                                                    <constraint firstItem="Rwj-FG-5kk" firstAttribute="leading" secondItem="9CP-io-WtP" secondAttribute="leading" constant="20" symbolic="YES" id="NCC-kI-CoY"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Rwj-FG-5kk" secondAttribute="bottom" id="Noe-Uj-uTQ"/>
                                                     <constraint firstAttribute="trailing" secondItem="Zu6-OB-ieT" secondAttribute="trailing" constant="20" id="UVt-ca-VwF"/>
                                                     <constraint firstAttribute="height" constant="190" id="ht4-30-Mdk"/>
+                                                    <constraint firstItem="Rwj-FG-5kk" firstAttribute="top" secondItem="9CP-io-WtP" secondAttribute="top" constant="8" id="ikj-qX-URg"/>
                                                     <constraint firstItem="Zu6-OB-ieT" firstAttribute="top" secondItem="9CP-io-WtP" secondAttribute="top" constant="20" id="tRX-BD-2YG"/>
                                                 </constraints>
                                             </view>
@@ -1160,6 +1190,7 @@
                     <navigationItem key="navigationItem" title="Criar anúncio" id="Ub9-yo-d7s"/>
                     <connections>
                         <outlet property="addPhotoView" destination="Zu6-OB-ieT" id="xcG-x3-SQh"/>
+                        <outlet property="imageView" destination="Rwj-FG-5kk" id="E3a-43-xbg"/>
                         <outlet property="mainView" destination="gAj-q6-IP6" id="OBX-Kc-FvX"/>
                         <outlet property="pickerView" destination="eDF-6a-ik9" id="WUv-qL-SuI"/>
                         <outlet property="txtViewDescription" destination="8fa-Co-WPO" id="ZTQ-mN-nNt"/>

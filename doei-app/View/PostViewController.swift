@@ -12,6 +12,8 @@ class PostViewController: UIViewController, UISearchBarDelegate {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var loadingView: UIView!
+
     var dataSource: Posts?
     var viewModel: PostViewModel?
     var logado = false
@@ -66,6 +68,7 @@ class PostViewController: UIViewController, UISearchBarDelegate {
         self.viewModel = PostViewModel()
         self.viewModel?.getPosts(completion: { (posts) in
             self.dataSource = posts!
+            self.loadingView.isHidden = true
             self.collectionView.reloadData()
         })
     }
@@ -102,7 +105,6 @@ class PostViewController: UIViewController, UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
         if let data = dataSource?.posts {
-            
             
             filteredData = data.filter({$0.title!.lowercased().folding(options: .diacriticInsensitive, locale: .current).contains(searchText.lowercased().folding(options: .diacriticInsensitive, locale: .current)) })
             searching = true

@@ -7,11 +7,12 @@
 
 import UIKit
 
-class CreatePostViewController: UIViewController, UITextViewDelegate {
+class CreatePostViewController: UIViewController, UITextViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     var categories: [String] = ["Eletrônicos","Móveis", "Roupas", "Calçados", "Acessórios"]
     @IBOutlet weak var pickerView: UIPickerView!
     
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var addPhotoView: UIView!
     @IBOutlet weak var mainView: UIView!
     
@@ -19,14 +20,39 @@ class CreatePostViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var txtViewDescription: UITextView!
     @IBOutlet weak var txtViewPhone: UITextView!
     
+    var imagePicker = UIImagePickerController()
+
+    
     let logado = true
     override func viewDidLoad() {
         super.viewDidLoad()
         addPhotoView.addDashedBorder()
         
     }
+    @IBAction func pickImage(_ sender: Any) {
+        
+        if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
+            print("Button capture")
+
+            imagePicker.delegate = self
+            imagePicker.sourceType = .savedPhotosAlbum
+            imagePicker.allowsEditing = false
+
+            present(imagePicker, animated: true, completion: nil)
+        }
+    }
     
-    override func viewDidAppear(_ animated: Bool) {        
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+         picker.dismiss(animated: true, completion: nil)
+         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+             imageView.image = image
+         }
+
+     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        imageView.image = nil
+
         if(!logado){
             tabBarController?.selectedIndex = 0
         }
