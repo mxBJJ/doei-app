@@ -103,7 +103,8 @@ class PostViewController: UIViewController, UISearchBarDelegate {
         
         if let data = dataSource?.posts {
             
-            filteredData = data.filter({$0.title!.lowercased().contains(searchText.lowercased()) })
+            
+            filteredData = data.filter({$0.title!.lowercased().folding(options: .diacriticInsensitive, locale: .current).contains(searchText.lowercased().folding(options: .diacriticInsensitive, locale: .current)) })
             searching = true
             collectionView.reloadData()
         }
