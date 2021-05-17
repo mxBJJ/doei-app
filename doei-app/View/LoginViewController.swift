@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
@@ -14,9 +15,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var txtFieldPassword: UITextField!
     @IBOutlet weak var txtFieldEmail: UITextField!
     @IBOutlet weak var btnGoogle: UIButton!
-    
-    var logado: Bool = false
-    
+    @IBOutlet weak var loadingView: UIView!
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         setViewsStyles()
@@ -40,5 +40,42 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-    
+    @IBAction func loginAction(_ sender: Any) {
+        
+        loadingView.isHidden = false
+        var params = Parameters()
+        var header = HTTPHeaders()
+        
+        header = [
+             "Content-Type": "application/json"
+         ]
+        
+        params["email"] = txtFieldEmail.text
+        params["password"] = txtFieldPassword.text
+        
+        let url = API.authUrl + Endpoints.login.rawValue
+        
+        PostsService.login(url: url, params: params, header: header, encoding: JSONEncoding.default) { [self] user in
+            
+            if user?.user != nil{
+                loadingView.isHidden = true
+                print("Usuário logado!")
+                UserDefaults.standard.setValue(user?.token, forKey: "token")
+                UserDefaults.standard.setValue(true, forKey: "logado")
+                UserDefaults.standard.setValue(user?.user?._id, forKey: "userId")
+
+                self.dismiss(animated: true, completion: nil)
+            }else{
+                print("Falha no login!")
+                let errorAlert = UIAlertController(title: "Erro", message: "Erro ao efetuar login!", preferredStyle: UIAlertController.Style.alert)
+                
+                errorAlert.addAction(UIAlertAction(title: "Entendi", style: .default, handler: { (action: UIAlertAction!) in
+                    
+                    loadingView.isHidden = true
+                }))
+                
+                self.present(errorAlert, animated: true, completion: nil)
+            }
+        }
+    }
 }

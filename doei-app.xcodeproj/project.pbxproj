@@ -19,6 +19,8 @@
 		FE2ACC6026408E5200498282 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2ACC5F26408E5200498282 /* API.swift */; };
 		FE4C32192652A290005CFC40 /* PostEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4C32182652A290005CFC40 /* PostEntity.swift */; };
 		FE4C321B2652C436005CFC40 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FE4C321A2652C436005CFC40 /* GoogleService-Info.plist */; };
+		FE4C321D2652D415005CFC40 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4C321C2652D415005CFC40 /* UserResponse.swift */; };
+		FE4C321F2652E23F005CFC40 /* ConfigurationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4C321E2652E23F005CFC40 /* ConfigurationsViewController.swift */; };
 		FE69E6D1262BC428002B4BCD /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE69E6D0262BC428002B4BCD /* FilterViewController.swift */; };
 		FE69E6D6262BCBDD002B4BCD /* FilterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE69E6D5262BCBDD002B4BCD /* FilterTableViewCell.swift */; };
 		FE86BD9E262CAFB2008042C4 /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE86BD9D262CAFB2008042C4 /* RatingViewController.swift */; };
@@ -75,6 +77,8 @@
 		FE2ACC5F26408E5200498282 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		FE4C32182652A290005CFC40 /* PostEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEntity.swift; sourceTree = "<group>"; };
 		FE4C321A2652C436005CFC40 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FE4C321C2652D415005CFC40 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
+		FE4C321E2652E23F005CFC40 /* ConfigurationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationsViewController.swift; sourceTree = "<group>"; };
 		FE69E6D0262BC428002B4BCD /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		FE69E6D5262BCBDD002B4BCD /* FilterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTableViewCell.swift; sourceTree = "<group>"; };
 		FE86BD9D262CAFB2008042C4 /* RatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingViewController.swift; sourceTree = "<group>"; };
@@ -222,6 +226,7 @@
 				FE69E6D0262BC428002B4BCD /* FilterViewController.swift */,
 				FEEA7A18262C6CB1005E36B0 /* FiltersTableViewController.swift */,
 				FE86BD9D262CAFB2008042C4 /* RatingViewController.swift */,
+				FE4C321E2652E23F005CFC40 /* ConfigurationsViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -241,6 +246,7 @@
 				FED0CD632626376D0068AC69 /* Post.swift */,
 				FEA321B32646D63100DFCF49 /* User.swift */,
 				FEA321B82646E30400DFCF49 /* Posts.swift */,
+				FE4C321C2652D415005CFC40 /* UserResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -524,6 +530,8 @@
 				FED0CD10262629020068AC69 /* PostViewController.swift in Sources */,
 				FEA321AF2646D52700DFCF49 /* PostsService.swift in Sources */,
 				FED0CD642626376D0068AC69 /* Post.swift in Sources */,
+				FE4C321F2652E23F005CFC40 /* ConfigurationsViewController.swift in Sources */,
+				FE4C321D2652D415005CFC40 /* UserResponse.swift in Sources */,
 				FED0CD0C262629020068AC69 /* AppDelegate.swift in Sources */,
 				FE69E6D6262BCBDD002B4BCD /* FilterTableViewCell.swift in Sources */,
 				FEA321B92646E30400DFCF49 /* Posts.swift in Sources */,

@@ -60,9 +60,6 @@ class PostViewController: UIViewController, UISearchBarDelegate {
         navigationController?.navigationItem.backButtonTitle = ""
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        
-    }
     
     func setViewModel(){
         self.viewModel = PostViewModel()

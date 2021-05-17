@@ -7,48 +7,128 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "66FF3EB4-CEC9-407A-AE42-16588E45A5A9"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "doei-app/View/CreatePostViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "144"
-            endingLineNumber = "144"
-            landmarkName = "createPost(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "30280952-44A4-43F7-B50A-D0EE7AD22C51"
+            uuid = "6A93C787-A15D-44EC-80C9-A14CA7800F69"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "doei-app/Service/PostsService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "createPost(url:params:header:encoding:completion:)"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "login(url:params:header:encoding:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6E15F7B8-E549-4E78-AD19-780049500979"
+            uuid = "D3CF6951-DFFC-45E9-BCB1-21DD9D930149"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "doei-app/View/DetailViewController.swift"
+            filePath = "doei-app/View/MyAccountViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
-            landmarkName = "btnWantAction(_:)"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "viewWillAppear(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D3CF6951-DFFC-45E9-BCB1-21DD9D930149 - e94f0562bc8184fb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "doei_app.MyAccountViewController.viewWillAppear(Swift.Bool) -&gt; ()"
+                  moduleName = "doei-app"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maxmendes/Developer/doei-app/doei-app/View/MyAccountViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "208">
+               </Location>
+               <Location
+                  uuid = "D3CF6951-DFFC-45E9-BCB1-21DD9D930149 - e94f0562bc8184fb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "doei_app.MyAccountViewController.viewWillAppear(Swift.Bool) -&gt; ()"
+                  moduleName = "doei-app"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maxmendes/Developer/doei-app/doei-app/View/MyAccountViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "704">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2BD9951B-813A-4494-B4F5-88493E5E9308"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "doei-app/View/CreatePostViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "viewWillAppear(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2BD9951B-813A-4494-B4F5-88493E5E9308 - 4d8f91921e988c5a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "doei_app.CreatePostViewController.viewWillAppear(Swift.Bool) -&gt; ()"
+                  moduleName = "doei-app"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maxmendes/Developer/doei-app/doei-app/View/CreatePostViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "86"
+                  endingLineNumber = "86"
+                  offsetFromSymbolStart = "1828">
+               </Location>
+               <Location
+                  uuid = "2BD9951B-813A-4494-B4F5-88493E5E9308 - 4d8f91921e988c5a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "doei_app.CreatePostViewController.viewWillAppear(Swift.Bool) -&gt; ()"
+                  moduleName = "doei-app"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maxmendes/Developer/doei-app/doei-app/View/CreatePostViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "86"
+                  endingLineNumber = "86"
+                  offsetFromSymbolStart = "2324">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "34934E2C-32D8-4758-9F32-A0DE21AE1F3C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "doei-app/View/CreatePostViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "viewDidAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

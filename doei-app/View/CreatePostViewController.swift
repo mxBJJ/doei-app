@@ -12,6 +12,7 @@ import FirebaseStorage
 class CreatePostViewController: UIViewController, UITextViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     
+    @IBOutlet weak var loadingView: UIView!
     var categories: [String] = ["Eletrônicos","Móveis", "Roupas", "Calçados", "Acessórios"]
     var cities: [String] = ["Porto Alegre","Florianópolis", "São Paulo", "Joinville", "Niterói"]
     var productState: [String] = ["Com defeito","Regular", "Bom", "Novo"]
@@ -30,8 +31,6 @@ class CreatePostViewController: UIViewController, UITextViewDelegate, UINavigati
     
     var imagePicker = UIImagePickerController()
     
-    
-    let logado = true
     override func viewDidLoad() {
         super.viewDidLoad()
         addPhotoView.addDashedBorder()
@@ -50,6 +49,7 @@ class CreatePostViewController: UIViewController, UITextViewDelegate, UINavigati
         }
     }
     
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true, completion: nil)
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
@@ -60,6 +60,8 @@ class CreatePostViewController: UIViewController, UITextViewDelegate, UINavigati
     
     override func viewDidAppear(_ animated: Bool) {
         imageView.image = nil
+    
+        let logado = UserDefaults.standard.bool(forKey: "logado")
         
         if(!logado){
             tabBarController?.selectedIndex = 0
@@ -68,12 +70,15 @@ class CreatePostViewController: UIViewController, UITextViewDelegate, UINavigati
     
     override func viewWillAppear(_ animated: Bool) {
         
+        let logado = UserDefaults.standard.bool(forKey: "logado")
+        
         txtViewTitle.text = "Ex: Playstation 4 PRO"
         txtViewTitle.textColor = UIColor.lightGray
         txtViewDescription.text = "Ex: Playstation 4 PRO em excelente estado, acompanha 1 controle e 2 jogos."
         txtViewDescription.textColor = UIColor.lightGray
         txtViewPhone.text = "Ex: (51) 999999-9999"
         txtViewPhone.textColor = UIColor.lightGray
+        
         
         if(!logado){
             let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
@@ -124,9 +129,9 @@ class CreatePostViewController: UIViewController, UITextViewDelegate, UINavigati
     
     @IBAction func createPost(_ sender: Any) {
         
+        loadingView.isHidden = false
+        
         let strBase64 = imageView.image?.jpegData(compressionQuality: 1)?.base64EncodedString()
-        
-        
         
         if let title = txtViewTitle.text{
             if let postDescription = txtViewDescription.text {
@@ -142,7 +147,7 @@ class CreatePostViewController: UIViewController, UITextViewDelegate, UINavigati
                     post.user = "60908cd96181b817f3ac363c"
                     
                     createPost(postEntity: post)
-                    
+
                 }
             }
         }
@@ -159,9 +164,9 @@ class CreatePostViewController: UIViewController, UITextViewDelegate, UINavigati
         let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOTA4Y2Q5NjE4MWI4MTdmM2FjMzYzYyIsImlhdCI6MTYyMTI2MjE3MCwiZXhwIjoxNjIxMzQ4NTcwfQ.d9iaUKv0INSxr0CTJU0ji6NKlpk6lK6Qb-PHTvNrsiM"
         
         header = [
-            "Authorization": "Bearer \(token)",
-            "Content-Type": "application/json"
-        ]
+             "Authorization": "Bearer \(token)",
+             "Content-Type": "application/json"
+         ]
         
         
         guard let imageData = imageView.image?.jpegData(compressionQuality: 0.5) else { return }
@@ -169,7 +174,7 @@ class CreatePostViewController: UIViewController, UITextViewDelegate, UINavigati
         let storageRef = Storage.storage().reference(forURL: "gs://doeiapp-9d5a9.appspot.com")
         
         let postImageRef = storageRef.child("images").child(UUID().uuidString)
-        
+
         let metadata = StorageMetadata()
         metadata.contentType = "image/jpg"
         
@@ -193,10 +198,10 @@ class CreatePostViewController: UIViewController, UITextViewDelegate, UINavigati
                     
                     let url = API.baseUrl + Endpoints.posts.rawValue
                     
-                    PostsService.createPost(url: url, params: params, header: header, encoding: JSONEncoding.default) { (completion) in
+                    PostsService.createPost(url: url, params: params, header: header, encoding: JSONEncoding.default) { [self] (completion) in
                         
                         if completion{
-                            
+                            loadingView.isHidden = true
                             print("Anuncio criado ok!")
                             let confirmAlert = UIAlertController(title: "Parabéns", message: "Seu anúncio foi publicado!", preferredStyle: UIAlertController.Style.alert)
                             
@@ -217,7 +222,7 @@ class CreatePostViewController: UIViewController, UITextViewDelegate, UINavigati
                             
                         }
                     }
-                    
+
                 }
             }
         }

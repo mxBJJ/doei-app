@@ -9,4 +9,5 @@ import Foundation
 
 enum Endpoints: String {
     case posts = "posts"
+    case login = "login"
 }

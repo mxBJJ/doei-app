@@ -38,6 +38,25 @@ struct PostsService {
                 completion(false)
             }
         }
+    }
+    
+    static func login(url: String, params: Parameters, header: HTTPHeaders, encoding: JSONEncoding, completion:@escaping (_ user: UserResponse?) -> ()){
         
+        AF.request(url, method: .post, parameters: params, encoding: encoding, headers: header).responseJSON { (response) in
+            
+            guard let data = response.data else {
+                completion(nil)
+                return
+            }
+            
+            do {
+                let result = try JSONDecoder().decode(UserResponse.self, from: data)
+                completion(result)
+                
+            }catch{
+                completion(nil)
+            }
+
+        }
     }
 }

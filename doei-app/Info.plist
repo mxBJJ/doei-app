@@ -4,6 +4,8 @@
 <dict>
 	<key>api</key>
 	<string>https://doeiapp-api.herokuapp.com/</string>
+	<key>authentication</key>
+	<string>https://doeiapp-authentication.herokuapp.com/</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>

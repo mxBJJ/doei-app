@@ -17,13 +17,20 @@ class MyAccountViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    
     override func viewDidAppear(_ animated: Bool) {
+        
+        let logado = UserDefaults.standard.bool(forKey: "logado")
+        
         if(!logado){
             tabBarController?.selectedIndex = 0
         }
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
+        let logado = UserDefaults.standard.bool(forKey: "logado")
+        
         if(!logado){
             let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
             loginVC.modalPresentationStyle = .popover
