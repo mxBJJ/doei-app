@@ -17,6 +17,8 @@
 		FE1843F12627A40300065651 /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1843F02627A40300065651 /* CreatePostViewController.swift */; };
 		FE2ACC5B26408D8300498282 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2ACC5A26408D8300498282 /* Endpoints.swift */; };
 		FE2ACC6026408E5200498282 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2ACC5F26408E5200498282 /* API.swift */; };
+		FE4C32192652A290005CFC40 /* PostEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4C32182652A290005CFC40 /* PostEntity.swift */; };
+		FE4C321B2652C436005CFC40 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FE4C321A2652C436005CFC40 /* GoogleService-Info.plist */; };
 		FE69E6D1262BC428002B4BCD /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE69E6D0262BC428002B4BCD /* FilterViewController.swift */; };
 		FE69E6D6262BCBDD002B4BCD /* FilterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE69E6D5262BCBDD002B4BCD /* FilterTableViewCell.swift */; };
 		FE86BD9E262CAFB2008042C4 /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE86BD9D262CAFB2008042C4 /* RatingViewController.swift */; };
@@ -71,6 +73,8 @@
 		FE1843F02627A40300065651 /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
 		FE2ACC5A26408D8300498282 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		FE2ACC5F26408E5200498282 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		FE4C32182652A290005CFC40 /* PostEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEntity.swift; sourceTree = "<group>"; };
+		FE4C321A2652C436005CFC40 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FE69E6D0262BC428002B4BCD /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		FE69E6D5262BCBDD002B4BCD /* FilterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTableViewCell.swift; sourceTree = "<group>"; };
 		FE86BD9D262CAFB2008042C4 /* RatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingViewController.swift; sourceTree = "<group>"; };
@@ -182,6 +186,7 @@
 				FED0CD0D262629020068AC69 /* SceneDelegate.swift */,
 				FED0CD14262629050068AC69 /* Assets.xcassets */,
 				FE0866DE262693CA00E28A77 /* placeholder.jpeg */,
+				FE4C321A2652C436005CFC40 /* GoogleService-Info.plist */,
 				FED0CD19262629050068AC69 /* Info.plist */,
 			);
 			path = "doei-app";
@@ -232,6 +237,7 @@
 		FED0CD4726262C080068AC69 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FE4C32182652A290005CFC40 /* PostEntity.swift */,
 				FED0CD632626376D0068AC69 /* Post.swift */,
 				FEA321B32646D63100DFCF49 /* User.swift */,
 				FEA321B82646E30400DFCF49 /* Posts.swift */,
@@ -377,6 +383,7 @@
 			files = (
 				FED0CD18262629050068AC69 /* LaunchScreen.storyboard in Resources */,
 				FED0CD15262629050068AC69 /* Assets.xcassets in Resources */,
+				FE4C321B2652C436005CFC40 /* GoogleService-Info.plist in Resources */,
 				FE0866DF262693CA00E28A77 /* placeholder.jpeg in Resources */,
 				FEDFDC28262B786F0085AD53 /* Main.storyboard in Resources */,
 			);
@@ -524,6 +531,7 @@
 				FEA321B42646D63100DFCF49 /* User.swift in Sources */,
 				FE0866DA262671FC00E28A77 /* DetailViewController.swift in Sources */,
 				FE2ACC6026408E5200498282 /* API.swift in Sources */,
+				FE4C32192652A290005CFC40 /* PostEntity.swift in Sources */,
 				FE86BD9E262CAFB2008042C4 /* RatingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

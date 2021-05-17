@@ -6,11 +6,19 @@
 //
 
 import UIKit
+import Alamofire
+import FirebaseStorage
 
 class CreatePostViewController: UIViewController, UITextViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
+    
     var categories: [String] = ["Eletrônicos","Móveis", "Roupas", "Calçados", "Acessórios"]
-    @IBOutlet weak var pickerView: UIPickerView!
+    var cities: [String] = ["Porto Alegre","Florianópolis", "São Paulo", "Joinville", "Niterói"]
+    var productState: [String] = ["Com defeito","Regular", "Bom", "Novo"]
+    
+    @IBOutlet weak var pickerViewProductState: UIPickerView!
+    @IBOutlet weak var pickerViewCategory: UIPickerView!
+    @IBOutlet weak var pickerViewCity: UIPickerView!
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var addPhotoView: UIView!
@@ -21,7 +29,7 @@ class CreatePostViewController: UIViewController, UITextViewDelegate, UINavigati
     @IBOutlet weak var txtViewPhone: UITextView!
     
     var imagePicker = UIImagePickerController()
-
+    
     
     let logado = true
     override func viewDidLoad() {
@@ -33,26 +41,26 @@ class CreatePostViewController: UIViewController, UITextViewDelegate, UINavigati
         
         if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
             print("Button capture")
-
+            
             imagePicker.delegate = self
             imagePicker.sourceType = .savedPhotosAlbum
             imagePicker.allowsEditing = false
-
+            
             present(imagePicker, animated: true, completion: nil)
         }
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-         picker.dismiss(animated: true, completion: nil)
-         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-             imageView.image = image
-         }
-
-     }
+        picker.dismiss(animated: true, completion: nil)
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            imageView.image = image
+        }
+        
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         imageView.image = nil
-
+        
         if(!logado){
             tabBarController?.selectedIndex = 0
         }
@@ -113,6 +121,108 @@ class CreatePostViewController: UIViewController, UITextViewDelegate, UINavigati
             txtViewPhone.textColor = UIColor.lightGray
         }
     }
+    
+    @IBAction func createPost(_ sender: Any) {
+        
+        let strBase64 = imageView.image?.jpegData(compressionQuality: 1)?.base64EncodedString()
+        
+        
+        
+        if let title = txtViewTitle.text{
+            if let postDescription = txtViewDescription.text {
+                if let contact = txtViewPhone.text {
+                    var post = PostEntity()
+                    post.title = title
+                    post.description = postDescription
+                    post.contact = contact
+                    post.img = strBase64
+                    post.location = cities[pickerViewCity.selectedRow(inComponent: 0)]
+                    post.state = productState[pickerViewProductState.selectedRow(inComponent: 0)]
+                    post.category = categories[pickerViewProductState.selectedRow(inComponent: 0)]
+                    post.user = "60908cd96181b817f3ac363c"
+                    
+                    createPost(postEntity: post)
+                    
+                }
+            }
+        }
+        
+    }
+    
+    
+    
+    func createPost(postEntity: PostEntity){
+        
+        
+        var params = Parameters()
+        var header = HTTPHeaders()
+        let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOTA4Y2Q5NjE4MWI4MTdmM2FjMzYzYyIsImlhdCI6MTYyMTI2MjE3MCwiZXhwIjoxNjIxMzQ4NTcwfQ.d9iaUKv0INSxr0CTJU0ji6NKlpk6lK6Qb-PHTvNrsiM"
+        
+        header = [
+            "Authorization": "Bearer \(token)",
+            "Content-Type": "application/json"
+        ]
+        
+        
+        guard let imageData = imageView.image?.jpegData(compressionQuality: 0.5) else { return }
+        
+        let storageRef = Storage.storage().reference(forURL: "gs://doeiapp-9d5a9.appspot.com")
+        
+        let postImageRef = storageRef.child("images").child(UUID().uuidString)
+        
+        let metadata = StorageMetadata()
+        metadata.contentType = "image/jpg"
+        
+        postImageRef.putData(imageData, metadata: metadata) { storageData, error in
+            if(error != nil){
+                print("Image upload error")
+                return
+            }
+            
+            postImageRef.downloadURL { url, error in
+                if let metadataUrl = url?.absoluteString{
+                    print(metadataUrl)
+                    params["img"] = metadataUrl
+                    params["title"] = postEntity.title
+                    params["description"] = postEntity.description
+                    params["location"] = postEntity.location
+                    params["contact"] = postEntity.contact
+                    params["state"] = postEntity.state
+                    params["user"] = postEntity.user
+                    
+                    
+                    let url = API.baseUrl + Endpoints.posts.rawValue
+                    
+                    PostsService.createPost(url: url, params: params, header: header, encoding: JSONEncoding.default) { (completion) in
+                        
+                        if completion{
+                            
+                            print("Anuncio criado ok!")
+                            let confirmAlert = UIAlertController(title: "Parabéns", message: "Seu anúncio foi publicado!", preferredStyle: UIAlertController.Style.alert)
+                            
+                            confirmAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+                            }))
+                            
+                            self.present(confirmAlert, animated: true, completion: nil)
+                            
+                            
+                        }else{
+                            print("POST criar anuncio error!")
+                            let errorAlert = UIAlertController(title: "Erro", message: "Erro ao criar anúncio!", preferredStyle: UIAlertController.Style.alert)
+                            
+                            errorAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+                            }))
+                            
+                            self.present(errorAlert, animated: true, completion: nil)
+                            
+                        }
+                    }
+                    
+                }
+            }
+        }
+    }
+    
 }
 
 extension UIView {
@@ -142,10 +252,26 @@ extension CreatePostViewController: UIPickerViewDelegate, UIPickerViewDataSource
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if(pickerView == pickerViewCity){
+            return cities.count
+        }
+        
+        if(pickerView == pickerViewProductState){
+            return productState.count
+        }
+        
         return categories.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if(pickerView == pickerViewCity){
+            return cities[row]
+        }
+        
+        if(pickerView == pickerViewProductState){
+            return productState[row]
+        }
+        
         return categories[row]
     }
     

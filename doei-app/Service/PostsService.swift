@@ -27,4 +27,17 @@ struct PostsService {
             }
         }
     }
+    
+    static func createPost(url: String, params: Parameters, header: HTTPHeaders, encoding: JSONEncoding, completion:@escaping (Bool) -> ()){
+        
+        AF.request(url, method: .post, parameters: params, encoding: encoding, headers: header).responseJSON { (response) in
+            
+            if response.response?.statusCode == 200 {
+                completion(true)
+            }else{
+                completion(false)
+            }
+        }
+        
+    }
 }

@@ -72,6 +72,10 @@ class DetailViewController: UIViewController, FloatRatingViewDelegate {
     
     
     @IBAction func btnWantAction(_ sender: Any) {
+        
+        if let phone = self.post?.user?.phone {
+        UIApplication.shared.openURL(URL(string:"https://api.whatsapp.com/send?phone=\(phone)")!)
+        }
     }
     
     @IBAction func btnShareAction(_ sender: Any) {
