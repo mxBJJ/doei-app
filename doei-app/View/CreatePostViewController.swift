@@ -30,6 +30,8 @@ class CreatePostViewController: UIViewController, UITextViewDelegate, UINavigati
     @IBOutlet weak var txtViewPhone: UITextView!
     
     var imagePicker = UIImagePickerController()
+    var token = ""
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -159,10 +161,16 @@ class CreatePostViewController: UIViewController, UITextViewDelegate, UINavigati
     func createPost(postEntity: PostEntity){
         
         
+        
+        
         var params = Parameters()
         var header = HTTPHeaders()
-        let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOTA4Y2Q5NjE4MWI4MTdmM2FjMzYzYyIsImlhdCI6MTYyMTI2MjE3MCwiZXhwIjoxNjIxMzQ4NTcwfQ.d9iaUKv0INSxr0CTJU0ji6NKlpk6lK6Qb-PHTvNrsiM"
         
+        if let token = UserDefaults.standard.string(forKey: "token") {
+            
+            self.token = token
+        }
+
         header = [
              "Authorization": "Bearer \(token)",
              "Content-Type": "application/json"
@@ -177,6 +185,7 @@ class CreatePostViewController: UIViewController, UITextViewDelegate, UINavigati
 
         let metadata = StorageMetadata()
         metadata.contentType = "image/jpg"
+    
         
         postImageRef.putData(imageData, metadata: metadata) { storageData, error in
             if(error != nil){
@@ -214,7 +223,8 @@ class CreatePostViewController: UIViewController, UITextViewDelegate, UINavigati
                         }else{
                             print("POST criar anuncio error!")
                             let errorAlert = UIAlertController(title: "Erro", message: "Erro ao criar anúncio!", preferredStyle: UIAlertController.Style.alert)
-                            
+                            self.loadingView.isHidden = true
+                            print(error)
                             errorAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
                             }))
                             
