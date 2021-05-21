@@ -27,7 +27,6 @@ class CreatePostViewController: UIViewController, UITextViewDelegate, UINavigati
     
     @IBOutlet weak var txtViewTitle: UITextView!
     @IBOutlet weak var txtViewDescription: UITextView!
-    @IBOutlet weak var txtViewPhone: UITextView!
     
     var imagePicker = UIImagePickerController()
     var token = ""
@@ -78,8 +77,6 @@ class CreatePostViewController: UIViewController, UITextViewDelegate, UINavigati
         txtViewTitle.textColor = UIColor.lightGray
         txtViewDescription.text = "Ex: Playstation 4 PRO em excelente estado, acompanha 1 controle e 2 jogos."
         txtViewDescription.textColor = UIColor.lightGray
-        txtViewPhone.text = "Ex: (51) 999999-9999"
-        txtViewPhone.textColor = UIColor.lightGray
         
         
         if(!logado){
@@ -92,7 +89,6 @@ class CreatePostViewController: UIViewController, UITextViewDelegate, UINavigati
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         txtViewTitle.endEditing(true)
         txtViewDescription.endEditing(true)
-        txtViewPhone.endEditing(true)
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
@@ -106,10 +102,6 @@ class CreatePostViewController: UIViewController, UITextViewDelegate, UINavigati
             txtViewDescription.textColor = UIColor.black
         }
         
-        if txtViewPhone.textColor == UIColor.lightGray && txtViewPhone.isFirstResponder {
-            txtViewPhone.text = nil
-            txtViewPhone.textColor = UIColor.black
-        }
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
@@ -122,11 +114,6 @@ class CreatePostViewController: UIViewController, UITextViewDelegate, UINavigati
             txtViewDescription.text = "Ex: Playstation 4 PRO em excelente estado, acompanha 1 controle e 2 jogos."
             txtViewDescription.textColor = UIColor.lightGray
         }
-        
-        if txtViewPhone.text.isEmpty {
-            txtViewPhone.text = "Ex: (51) 999999-9999"
-            txtViewPhone.textColor = UIColor.lightGray
-        }
     }
     
     @IBAction func createPost(_ sender: Any) {
@@ -137,11 +124,9 @@ class CreatePostViewController: UIViewController, UITextViewDelegate, UINavigati
         
         if let title = txtViewTitle.text{
             if let postDescription = txtViewDescription.text {
-                if let contact = txtViewPhone.text {
                     var post = PostEntity()
                     post.title = title
                     post.description = postDescription
-                    post.contact = contact
                     post.img = strBase64
                     post.location = cities[pickerViewCity.selectedRow(inComponent: 0)]
                     post.state = productState[pickerViewProductState.selectedRow(inComponent: 0)]
@@ -149,8 +134,6 @@ class CreatePostViewController: UIViewController, UITextViewDelegate, UINavigati
                     post.user = "60908cd96181b817f3ac363c"
                     
                     createPost(postEntity: post)
-
-                }
             }
         }
         

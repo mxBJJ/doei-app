@@ -67,7 +67,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 self.dismiss(animated: true, completion: nil)
             }else{
                 print("Falha no login!")
-                let errorAlert = UIAlertController(title: "Erro", message: "Erro ao efetuar login!", preferredStyle: UIAlertController.Style.alert)
+                let errorAlert = UIAlertController(title: "Falha no login", message: "Ocorreu um erro ao efetuar login! Verifique seu usuário e senha.", preferredStyle: UIAlertController.Style.alert)
                 
                 errorAlert.addAction(UIAlertAction(title: "Entendi", style: .default, handler: { (action: UIAlertAction!) in
                     
