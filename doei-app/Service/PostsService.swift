@@ -28,6 +28,25 @@ struct PostsService {
         }
     }
     
+    
+    static func getMyPosts(url: String,  params: Parameters, header: HTTPHeaders, encoding: URLEncoding, completion:@escaping (_ posts: MyPostsResponse?) -> Void){
+        
+        AF.request(url, method: .get, parameters: params, encoding: encoding, headers: header).responseJSON { (response) in
+            guard let data = response.data else {
+                completion(nil)
+                return
+            }
+            
+            do {
+                let result = try JSONDecoder().decode(MyPostsResponse.self, from: data)
+                completion(result)
+                
+            }catch{
+                completion(nil)
+            }
+        }
+    }
+    
     static func createPost(url: String, params: Parameters, header: HTTPHeaders, encoding: JSONEncoding, completion:@escaping (Bool) -> ()){
         
         AF.request(url, method: .post, parameters: params, encoding: encoding, headers: header).responseJSON { (response) in

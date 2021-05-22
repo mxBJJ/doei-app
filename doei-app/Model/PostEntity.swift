@@ -11,7 +11,6 @@ struct PostEntity {
     var title: String?
     var description: String?
     var img: String?
-    var contact: String?
     var state: String?
     var location: String?
     var category: String?

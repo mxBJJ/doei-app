@@ -143,9 +143,6 @@ class CreatePostViewController: UIViewController, UITextViewDelegate, UINavigati
     
     func createPost(postEntity: PostEntity){
         
-        
-        
-        
         var params = Parameters()
         var header = HTTPHeaders()
         
@@ -183,7 +180,7 @@ class CreatePostViewController: UIViewController, UITextViewDelegate, UINavigati
                     params["title"] = postEntity.title
                     params["description"] = postEntity.description
                     params["location"] = postEntity.location
-                    params["contact"] = postEntity.contact
+                    params["category"] = postEntity.category
                     params["state"] = postEntity.state
                     params["user"] = postEntity.user
                     
