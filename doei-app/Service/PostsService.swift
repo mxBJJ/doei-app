@@ -80,4 +80,24 @@ struct PostsService {
 
         }
     }
+    
+    static func rating(url: String, params: Parameters, encoding: JSONEncoding, completion:@escaping (_ user: RatingSuccess?) -> ()){
+        
+        AF.request(url, method: .post, parameters: params, encoding: encoding).responseJSON { (response) in
+            
+            guard let data = response.data else {
+                completion(nil)
+                return
+            }
+            
+            do {
+                let result = try JSONDecoder().decode(RatingSuccess.self, from: data)
+                completion(result)
+                
+            }catch{
+                completion(nil)
+            }
+
+        }
+    }
 }

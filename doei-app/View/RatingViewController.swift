@@ -7,10 +7,13 @@
 
 import UIKit
 import FloatRatingView
+import Alamofire
 
 class RatingViewController: UIViewController, FloatRatingViewDelegate {
     @IBOutlet weak var ratingView: FloatRatingView!
     @IBOutlet weak var lblRating: UILabel!
+    
+    var email: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +49,23 @@ class RatingViewController: UIViewController, FloatRatingViewDelegate {
     
     
     @IBAction func btnRating(_ sender: Any) {
+        
+        
+        var params = Parameters()
+        
+        params["email"] = email
+        params["ratingValue"] = ratingView.rating
+        
+        let url = API.authUrl + Endpoints.avaliar.rawValue
+
+        
+        PostsService.rating(url: url, params: params, encoding: JSONEncoding.default) { success in
+            
+            print(success)
+            
+            
+        }
+        
         self.dismiss(animated: true, completion: nil)
     }
     

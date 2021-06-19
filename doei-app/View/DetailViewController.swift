@@ -37,8 +37,12 @@ class DetailViewController: UIViewController, FloatRatingViewDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         
-        if(UserDefaults.standard.string(forKey: "userId") == (self.post?.user?._id!)!){
+        if(UserDefaults.standard.string(forKey: "userId") == (self.post?.user?._id!)! || UserDefaults.standard.bool(forKey: "logado") == false){
             self.ratingButton.isHidden = true
+        }
+        
+        if(UserDefaults.standard.string(forKey: "userId") == (self.post?.user?._id!)!){
+            self.btnWant.isHidden = true
         }
         
         navigationController?.navigationBar.isHidden = false
@@ -80,7 +84,7 @@ class DetailViewController: UIViewController, FloatRatingViewDelegate {
     @IBAction func btnWantAction(_ sender: Any) {
         
         if let phone = self.post?.user?.phone {
-        UIApplication.shared.openURL(URL(string:"https://api.whatsapp.com/send?phone=\(phone)")!)
+        UIApplication.shared.openURL(URL(string:"https://api.whatsapp.com/send?phone=55\(phone)")!)
         }
     }
     
@@ -95,6 +99,7 @@ class DetailViewController: UIViewController, FloatRatingViewDelegate {
         
         let ratingVC = storyboard?.instantiateViewController(withIdentifier: "RatingViewController") as! RatingViewController
         
+        ratingVC.email = (self.post?.user?.email)!
         present(ratingVC, animated: true, completion: nil)
     }
     
