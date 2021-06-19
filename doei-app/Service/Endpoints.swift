@@ -11,5 +11,6 @@ enum Endpoints: String {
     case posts = "posts"
     case login = "login"
     case avaliar = "avaliar"
+    case cadastrar = "cadastrar"
     case postsByUser = "usuario/posts"
 }

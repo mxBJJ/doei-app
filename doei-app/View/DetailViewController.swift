@@ -42,7 +42,8 @@ class DetailViewController: UIViewController, FloatRatingViewDelegate {
         }
         
         if(UserDefaults.standard.string(forKey: "userId") == (self.post?.user?._id!)!){
-            self.btnWant.isHidden = true
+            self.btnWant.isEnabled = false
+            self.btnWant.backgroundColor = .lightGray
         }
         
         navigationController?.navigationBar.isHidden = false
