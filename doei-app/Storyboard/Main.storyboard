@@ -791,6 +791,7 @@
                         <outlet property="lblState" destination="NSy-5Q-QIb" id="3jR-I6-6zE"/>
                         <outlet property="lblTitle" destination="Bdf-GN-2nK" id="EiT-9H-ccf"/>
                         <outlet property="postImage" destination="Xzi-hy-lM0" id="d3G-Cr-zcE"/>
+                        <outlet property="ratingButton" destination="jap-3P-Jfl" id="foM-2R-LIu"/>
                         <outlet property="ratingView" destination="Jgh-vc-27F" id="egw-sQ-LWa"/>
                     </connections>
                 </viewController>
@@ -1073,7 +1074,7 @@
                                                 </connections>
                                             </textView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Categoria*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cyb-sH-8nQ">
-                                                <rect key="frame" x="8" y="615" width="398" height="21"/>
+                                                <rect key="frame" x="8" y="599" width="398" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="Xbx-so-Lfc"/>
                                                 </constraints>
@@ -1082,7 +1083,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eDF-6a-ik9">
-                                                <rect key="frame" x="8" y="644" width="398" height="80"/>
+                                                <rect key="frame" x="8" y="628" width="398" height="80"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="80" id="PYC-xa-NwP"/>
                                                 </constraints>
@@ -1092,7 +1093,7 @@
                                                 </connections>
                                             </pickerView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cidade*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L2M-R5-Inq">
-                                                <rect key="frame" x="8" y="496" width="398" height="23"/>
+                                                <rect key="frame" x="8" y="480" width="398" height="23"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="23" id="cwP-sB-FeM"/>
                                                 </constraints>
@@ -1101,7 +1102,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cZa-Qm-N4U">
-                                                <rect key="frame" x="8" y="527" width="398" height="80"/>
+                                                <rect key="frame" x="8" y="511" width="398" height="80"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="80" id="x20-yH-uCj"/>
                                                 </constraints>
@@ -1111,7 +1112,7 @@
                                                 </connections>
                                             </pickerView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Estado do produto*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4AD-P1-6DR">
-                                                <rect key="frame" x="8" y="732" width="398" height="23"/>
+                                                <rect key="frame" x="8" y="716" width="398" height="23"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="23" id="CVV-ov-7uu"/>
                                                 </constraints>
@@ -1120,7 +1121,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EPt-7p-4s3">
-                                                <rect key="frame" x="8" y="763" width="398" height="80"/>
+                                                <rect key="frame" x="8" y="747" width="398" height="80"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="80" id="rFp-2d-PBI"/>
                                                 </constraints>
@@ -1130,7 +1131,7 @@
                                                 </connections>
                                             </pickerView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UBl-cs-5cU">
-                                                <rect key="frame" x="8" y="963" width="398" height="40"/>
+                                                <rect key="frame" x="8" y="927" width="398" height="40"/>
                                                 <color key="backgroundColor" red="0.0039215686269999999" green="0.40000000000000002" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="tCX-iO-MDx"/>
@@ -1166,7 +1167,7 @@
                                             <constraint firstAttribute="trailing" secondItem="cZa-Qm-N4U" secondAttribute="trailing" constant="8" id="SDH-7L-xY6"/>
                                             <constraint firstItem="9CP-io-WtP" firstAttribute="leading" secondItem="gAj-q6-IP6" secondAttribute="leading" id="Vay-fE-GdZ"/>
                                             <constraint firstItem="p9L-u2-8sQ" firstAttribute="leading" secondItem="gAj-q6-IP6" secondAttribute="leading" constant="8" id="YMF-EJ-SUp"/>
-                                            <constraint firstItem="UBl-cs-5cU" firstAttribute="top" secondItem="EPt-7p-4s3" secondAttribute="bottom" constant="120" id="aRb-7u-0df"/>
+                                            <constraint firstItem="UBl-cs-5cU" firstAttribute="top" secondItem="EPt-7p-4s3" secondAttribute="bottom" constant="100" id="aRb-7u-0df"/>
                                             <constraint firstAttribute="height" constant="1200" id="bY7-Tg-8GL"/>
                                             <constraint firstItem="Cyb-sH-8nQ" firstAttribute="top" secondItem="cZa-Qm-N4U" secondAttribute="bottom" constant="8" symbolic="YES" id="bwd-l2-Mqz"/>
                                             <constraint firstItem="8fa-Co-WPO" firstAttribute="leading" secondItem="gAj-q6-IP6" secondAttribute="leading" constant="8" id="cbS-ce-BxN"/>
@@ -1175,7 +1176,7 @@
                                             <constraint firstItem="8fa-Co-WPO" firstAttribute="top" secondItem="lF7-Hs-lXi" secondAttribute="bottom" constant="8" symbolic="YES" id="hjR-92-Aaq"/>
                                             <constraint firstItem="eDF-6a-ik9" firstAttribute="leading" secondItem="gAj-q6-IP6" secondAttribute="leading" constant="8" id="lWa-7u-jE5"/>
                                             <constraint firstAttribute="trailing" secondItem="UBl-cs-5cU" secondAttribute="trailing" constant="8" id="ny3-8N-vFB"/>
-                                            <constraint firstItem="L2M-R5-Inq" firstAttribute="top" secondItem="8fa-Co-WPO" secondAttribute="bottom" constant="32" id="p56-WM-SrY"/>
+                                            <constraint firstItem="L2M-R5-Inq" firstAttribute="top" secondItem="8fa-Co-WPO" secondAttribute="bottom" constant="16" id="p56-WM-SrY"/>
                                             <constraint firstItem="4AD-P1-6DR" firstAttribute="top" secondItem="eDF-6a-ik9" secondAttribute="bottom" constant="8" symbolic="YES" id="qU6-2s-Bvm"/>
                                             <constraint firstItem="L2M-R5-Inq" firstAttribute="leading" secondItem="gAj-q6-IP6" secondAttribute="leading" constant="8" id="rmD-Dn-ks0"/>
                                             <constraint firstAttribute="trailing" secondItem="EPt-7p-4s3" secondAttribute="trailing" constant="8" id="t0X-72-bwk"/>

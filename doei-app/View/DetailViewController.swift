@@ -22,6 +22,7 @@ class DetailViewController: UIViewController, FloatRatingViewDelegate {
     @IBOutlet weak var postImage: UIImageView!
     @IBOutlet weak var lblDescription: UILabel!
     @IBOutlet weak var lblDate: UILabel!
+    @IBOutlet weak var ratingButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +36,11 @@ class DetailViewController: UIViewController, FloatRatingViewDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
+        if(UserDefaults.standard.string(forKey: "userId") == (self.post?.user?._id!)!){
+            self.ratingButton.isHidden = true
+        }
+        
         navigationController?.navigationBar.isHidden = false
         navigationController?.navigationItem.backButtonTitle = " "
     }
