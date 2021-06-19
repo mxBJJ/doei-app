@@ -139,9 +139,8 @@
                                                     <constraint firstAttribute="height" constant="45" id="8oc-fH-QJb"/>
                                                 </constraints>
                                                 <segments>
-                                                    <segment title="Avaliações"/>
                                                     <segment title="Data"/>
-                                                    <segment title="Relevância"/>
+                                                    <segment title="Ordem alfabética"/>
                                                 </segments>
                                                 <color key="selectedSegmentTintColor" red="0.0039215686269999999" green="0.40000000000000002" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
                                             </segmentedControl>
@@ -188,6 +187,7 @@
                                             <action selector="btnShareAction:" destination="s0M-TO-MZd" eventType="touchUpInside" id="Ba4-hc-HoT"/>
                                             <action selector="btnWantAction:" destination="TQ1-tD-fOM" eventType="touchUpInside" id="Btp-uX-BrI"/>
                                             <action selector="btnWantAction:" destination="s0M-TO-MZd" eventType="touchUpInside" id="fOb-QZ-vPl"/>
+                                            <action selector="filterAction:" destination="dhh-W3-UI0" eventType="touchUpInside" id="3IF-IR-acC"/>
                                         </connections>
                                     </button>
                                 </subviews>

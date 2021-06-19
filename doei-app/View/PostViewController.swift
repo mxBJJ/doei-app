@@ -7,6 +7,7 @@
 
 import UIKit
 import Kingfisher
+import Alamofire
 
 class PostViewController: UIViewController, UISearchBarDelegate {
     
@@ -27,6 +28,8 @@ class PostViewController: UIViewController, UISearchBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(loadList(notification:)), name: NSNotification.Name(rawValue: "postsLoad"), object: nil)
+        
         collectionView.keyboardDismissMode = .onDrag
         
         refreshControl.addTarget(self, action: #selector(didPullToRefresh(_:)), for: .valueChanged)
@@ -38,6 +41,11 @@ class PostViewController: UIViewController, UISearchBarDelegate {
         setViewModel()
         setSearchBar()
         
+    }
+    
+    @objc func loadList(notification: NSNotification) {
+        self.loadingView.isHidden = false
+        setViewModel()
     }
     
     @objc
@@ -56,14 +64,31 @@ class PostViewController: UIViewController, UISearchBarDelegate {
     
     
     override func viewWillAppear(_ animated: Bool) {
+        
         navigationController?.navigationBar.isHidden = true
         navigationController?.navigationItem.backButtonTitle = ""
     }
     
     
     func setViewModel(){
+        
+        var filterCategory = UserDefaults.standard.string(forKey: "categoryFilter")!
+        
+        if(filterCategory == "Categorias/Subcategorias"){
+            filterCategory = ""
+        }
+        
+        var filterCity = UserDefaults.standard.string(forKey: "cityFilter")!
+        
+        
+        if(filterCity == "Cidade"){
+            filterCity = ""
+        }
+        
+        let orderByFilter = UserDefaults.standard.integer(forKey: "orderByFilter")
+        
         self.viewModel = PostViewModel()
-        self.viewModel?.getPosts(completion: { (posts) in
+        self.viewModel?.getPosts(category: filterCategory, city: filterCity, order: orderByFilter, completion: { (posts) in
             self.dataSource = posts!
             self.loadingView.isHidden = true
             self.collectionView.reloadData()
@@ -88,9 +113,6 @@ class PostViewController: UIViewController, UISearchBarDelegate {
     }
     
     @IBAction func btnFilterAction(_ sender: Any) {
-        
-        UserDefaults.standard.setValue("Categorias/Subcategorias", forKey: "categorias")
-        UserDefaults.standard.setValue("Cidade", forKey: "cidade")
         
         let filterVC = storyboard?.instantiateViewController(withIdentifier: "FilterViewController") as! FilterViewController
         

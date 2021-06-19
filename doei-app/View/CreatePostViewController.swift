@@ -130,8 +130,9 @@ class CreatePostViewController: UIViewController, UITextViewDelegate, UINavigati
                     post.img = strBase64
                     post.location = cities[pickerViewCity.selectedRow(inComponent: 0)]
                     post.state = productState[pickerViewProductState.selectedRow(inComponent: 0)]
-                    post.category = categories[pickerViewProductState.selectedRow(inComponent: 0)]
-                    post.user = "60908cd96181b817f3ac363c"
+                    post.category = categories[pickerViewCategory.selectedRow(inComponent: 0)]
+                    post.user = UserDefaults.standard.string(forKey: "userId")
+
                     
                     createPost(postEntity: post)
             }

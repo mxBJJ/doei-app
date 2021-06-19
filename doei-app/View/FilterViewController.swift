@@ -82,4 +82,14 @@ class FilterViewController: UIViewController {
         filtersVC.type = "City"
         self.navigationController?.pushViewController(filtersVC, animated: true)
     }
+    @IBAction func filterAction(_ sender: Any) {
+        self.dismiss(animated: true) {
+            UserDefaults.standard.setValue(self.lblCategory.text, forKey: "categoryFilter")
+            UserDefaults.standard.setValue(self.lblCity.text, forKey: "cityFilter")
+            UserDefaults.standard.setValue(self.segmentedControl.selectedSegmentIndex, forKey: "orderByFilter")
+            
+            NotificationCenter.default.post(name: NSNotification.Name("postsLoad"), object: nil)
+
+        }
+    }
 }

@@ -10,9 +10,11 @@ import Alamofire
 
 struct PostsService {
     
-    static func getPosts(url: String, completion:@escaping (_ posts: Posts?) -> Void){
+    static func getPosts(url: String, params: Parameters, encoding: URLEncoding, completion:@escaping (_ posts: Posts?) -> Void){
         
-        AF.request(url, method: .get).responseJSON { (response) in
+        print(params)
+        
+        AF.request(url, method: .get, parameters: params, encoding: encoding).responseJSON { (response) in
             guard let data = response.data else {
                 completion(nil)
                 return

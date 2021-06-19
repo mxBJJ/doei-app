@@ -16,6 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        
+        UserDefaults.standard.setValue("", forKey: "categoryFilter")
+        UserDefaults.standard.setValue("", forKey: "cityFilter")
+        UserDefaults.standard.setValue(0, forKey: "orderByFilter")
+        UserDefaults.standard.setValue("Categorias/Subcategorias", forKey: "categorias")
+        UserDefaults.standard.setValue("Cidade", forKey: "cidade")
+        
         return true
     }
 

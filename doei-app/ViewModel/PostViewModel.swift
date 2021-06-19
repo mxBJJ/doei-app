@@ -6,16 +6,23 @@
 //
 
 import Foundation
+import Alamofire
 
 class PostViewModel {
     
     var dataSource:Posts?
     
-    func getPosts(completion:@escaping (Posts?) -> Void) {
+    func getPosts(category: String, city: String, order: Int, completion:@escaping (Posts?) -> Void) {
+        
+        var params = Parameters()
+
+        params["category"] = category
+        params["city"] = city
+        params["orderBy"] = order
         
         let url = API.baseUrl + Endpoints.posts.rawValue
         
-        PostsService.getPosts(url: url) { (result) in
+        PostsService.getPosts(url: url, params: params, encoding: URLEncoding.queryString) { (result) in
             
             guard let posts = result else {
                 print("Request failed")
