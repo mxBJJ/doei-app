@@ -11,15 +11,12 @@ import Alamofire
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
     
-    @IBOutlet weak var btnFacebook: UIButton!
     @IBOutlet weak var txtFieldPassword: UITextField!
     @IBOutlet weak var txtFieldEmail: UITextField!
-    @IBOutlet weak var btnGoogle: UIButton!
     @IBOutlet weak var loadingView: UIView!
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        setViewsStyles()
         self.view.endEditing(true)
     }
     
@@ -27,11 +24,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.resignFirstResponder()
         self.txtFieldEmail.endEditing(true)
         self.txtFieldPassword.endEditing(true)
-    }
-    
-    func setViewsStyles(){
-        btnFacebook.layer.cornerRadius = 20
-        btnGoogle.layer.cornerRadius = 20
     }
     
     
